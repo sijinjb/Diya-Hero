@@ -96,12 +96,70 @@
 													<li><a href="video.html">Video</a></li>
 												</ul>
 											</li>
-											<li class=""><a href="gallery.html" style="color: black;">Gallery</a>
-												<ul>
-													<li><a href="events.html">events</a></li>
-													<li><a href="event-detail.html">events detail</a></li>
-												</ul>
+											<li class="dropdown has-megamenu" style="position: relative;">
+												<a href="gallery.html" style="color: black;">Gallery</a>
+												<!-- Megamenu -->
+												<div class="dropdown-menu" 
+													style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: none; z-index: 1000;">
+													<h3 class="ms-5" style="font-family: cursive; color: #575454;">Motorcycles</h3>
+													<div class="row mt-5" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">Karizma-xmr</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/mavrick-x440.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">mavrick-x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xpulse-200-4v</p>
+														</div>
+													</div>
+			
+													<div class="row" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/x440-hd.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xtreme-125r.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xtreme-125r</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xtreme-160r-4v</p>
+														</div>
+													</div>
+			
+													<div class="row" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">Karizma-xmr</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/mavrick-x440.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">mavrick-x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xpulse-200-4v</p>
+														</div>
+													</div>
+													
+												</div>
 											</li>
+											<script>
+												document.querySelectorAll('.has-megamenu').forEach(function (menuItem) {
+												menuItem.addEventListener('mouseenter', function () {
+												menuItem.querySelector('.dropdown-menu').style.display = 'block';
+												});
+												menuItem.addEventListener('mouseleave', function () {
+												menuItem.querySelector('.dropdown-menu').style.display = 'none';
+												});
+												});
+			
+											</script>
 											<li class=""><a href="adventure.html" style="color: black;">Book a Service</a>
 												<ul>
 													<li><a href="adventure.html">adventure</a></li>
@@ -146,10 +204,7 @@
 								
 								<!-- Header Button Box -->
 								<div class="header_button-box">
-										<!-- <span class="btn-wrap">
-											<span class="text-one"> <i class="flaticon-bell"></i></span>
-											<span class="text-two"><i class="flaticon-bell"></i></span>
-										</span> -->
+										
 									</a>
 								</div>
 								<!-- Mobile Navigation Toggler -->
@@ -272,188 +327,6 @@
     </div>
 </div>
 <!-- End Footer Visuals -->
-
-<!-- Address Section -->
-<div class="container my-5">
-    <h2 class="text-center" style="color: #d32f2f; font-weight: bold;">Our Locations</h2>
-    <div class="row mt-4">
-        <!-- Box 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Corporate Office</h5>
-                <p>Diya Group, Diya Arcade, Prathibha Ln Kadappakada, Kollam-8</p>
-                <p>Phone Trivandrum: <a href="tel:+9539110888">9539110888</a></p>
-                <p>Phone Kollam: <a href="tel:+9847855888">9847855888</a></p>
-            </div>
-        </div>
-        <!-- Box 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Premia & Hero Showroom: Kollam</h5>
-                <p>Diya Towers, Kadppakada, Kollam-691008</p>
-                <p>Email: <a href="mailto:diyamotors@yahoo.com">diyamotors@yahoo.com</a></p>
-                <p>Phone: <a href="tel:+04742731881">0474-2731881</a></p>
-            </div>
-        </div>
-        <!-- Box 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Premia & Hero Showroom: Thiruvananthapuram</h5>
-                <p>Diya Square, Eanchakkal, Thiruvananthapuram-695008</p>
-                <p>Email: <a href="mailto:diyamobikes@gmail.com">diyamobikes@gmail.com</a></p>
-                <p>Phone: <a href="tel:+04712509781">0471-2509781</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <!-- Box 4 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Premia & Hero Showroom: Alappuzha</h5>
-                <p>Diya Traders, Arattuvazhy, Alappuzha-688007</p>
-                <p>Email: <a href="mailto:diyaalappey@gmail.com">diyaalappey@gmail.com</a></p>
-                <p>Phone: <a href="tel:+9847355888">9847355888</a></p>
-            </div>
-        </div>
-        <!-- Box 5 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Showroom & Service Centre: Chavara</h5>
-                <p>Diya Hero, Opp: Private Bus Stand, Chavara</p>
-                <p>Email: <a href="mailto:diyamotorschavara@gmail.com">diyamotorschavara@gmail.com</a></p>
-                <p>Phone: <a href="tel:+9744822888">9744822888</a></p>
-            </div>
-        </div>
-        <!-- Box 6 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Diya Hero: Anchalumoodu</h5>
-                <p>Phone: <a href="tel:+8589075888">8589075888</a></p>
-                <p>Phone: <a href="tel:+9744833888">9744833888</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-4">
-        <!-- Box 7 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Diya Hero: Thiruvananthapuram</h5>
-                <p>Vida Hub, Ayurveda College Jn, Thiruvananthapuram-695001</p>
-                <p>Phone: <a href="tel:+9656844888">9656844888</a></p>
-            </div>
-        </div>
-        <!-- Box 8 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Showroom: Attingal</h5>
-                <p>Opp: Ganga Theatre Mamom, Attingal-695104</p>
-                <p>Email: <a href="mailto:diyasalesattingal@gmail.com">diyasalesattingal@gmail.com</a></p>
-                <p>Phone: <a href="tel:+04702629781">04702629781</a></p>
-            </div>
-        </div>
-        <!-- Box 9 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Hero Service: Kesavadasapuram & Ulloor</h5>
-                <p>Opp: MG College, Kesavadasapuram</p>
-				<p>Near Ulloor jn.</p>
-                <p>Email: <a href="mailto:diyamobikes.kpm@gmail.com">diyamobikes.kpm@gmail.com</a></p>
-				<p>Email: <a href="mailto:diyaservicekpm@gmail.com">diyaservicekpm@gmail.com</a></p>
-                <p>Phone: <a href="tel:+04712556071">0471-2556071</a></p>
-                <p>Phone: <a href="tel:+04712556071">0471-2551021</a></p>
-            </div>
-        </div>
-        <!-- Box 10 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Diya Hero </h5>
-                <p>Vida Hub, Ayurveda College jn, Thiruvananthapuram</p>
-                <p>Phone: <a href="tel:+7034633888">7034633888</a></p>
-				<p>Phone: <a href="tel:+9656844888">9656844888-</a></p>
-            </div>
-        </div>
-        <!-- Box 11 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Showroom & Service centre Parassala & Kaniyapuram</h5>
-                <p>Near KSRTC Stand, Kaniyapuram</p>
-				<p>Email: <a href="mailto:diyaherokaniyapuram@gmail.com">diyaherokaniyapuram@gmail.com</a></p>
-                <p>Phone: <a href="tel:+9847345888">9539067888</a></p>
-            </div>
-        </div>
-        <!-- Box 12 -->
-        <div class="col-md-4 mb-4">
-            <div class="p-4 d-flex flex-column align-items-stretch" style="border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); background: linear-gradient(to bottom, #ffffff, #f0f0f0); height: 100%;">
-                <h5 style="color: #d32f2f; font-weight: bold;">Super Stockist & Parts Distributor : Kollam,Thiruvananthapuram, Kottayam, Alappuzha, Pathanamthitta</h5>
-                <p>Diya Arcade, Prathibha jn, Kadappakada, Kollam-691008,</p>
-                <p>Phone: <a href="tel:+0474-2753800">0474-2753800</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<!-- End Address Section -->
-
-	
-	<!-- Video Two -->
-	<!-- <section class="video-two">
-		<div class="video-two_image" style="background-image:url(assets/images/background/2.jpg)"></div>
-		<div class="auto-container">
-			<div class="video-two_content">
-				<a href="https://youtu.be/lPvuJW77gtU" class="lightbox-video video-two_play"><span class="fa fa-play"><i class="ripple"></i></span></a>
-				<h2 class="video-two_heading">Take a Tour of My Ride</h2>
-			</div>
-		</div>
-	</section> -->
-	<!-- End Video Two -->
-	
-	<!-- Services Three -->
-	<!-- <section class="services-three">
-		<div class="auto-container">
-			<div class="inner-container">
-				<div class="row clearfix">
-					 -->
-					<!-- Service Block One -->
-					<!-- <div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-icon flaticon-danger"></div>
-							<h4 class="service-block_one-title"><a href="adventure-detail.html">Ride Limits</a></h4>
-							<div class="service-block_one-text">From scenic rides thrilling encoun our videos showcase.</div>
-						</div>
-					</div>
-					 -->
-					<!-- Service Block One -->
-					<!-- <div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-icon flaticon-racing"></div>
-							<h4 class="service-block_one-title"><a href="adventure-detail.html">Wheels Adventure</a></h4>
-							<div class="service-block_one-text">From scenic rides thrilling encoun our videos showcase.</div>
-						</div>
-					</div> -->
-					
-					<!-- Service Block One -->
-					<!-- <div class="service-block_one col-lg-4 col-md-6 col-sm-12">
-						<div class="service-block_one-inner">
-							<div class="service-block_one-icon flaticon-motorway"></div>
-							<h4 class="service-block_one-title"><a href="adventure-detail.html">Road Warrior</a></h4>
-							<div class="service-block_one-text">From scenic rides thrilling encoun our videos showcase.</div>
-						</div>
-					</div> -->
-					
-				<!-- </div>
-			</div>
-		</div>
-	</section> -->
-	<!-- End Services Three -->
-	
-	
-	
-	
 	
 	<!-- Main Footer -->
 	<footer class="main-footer mt-1" style="background-color: #1d1b1b; color: #fff; padding: 60px 0; position: relative; overflow: hidden;">

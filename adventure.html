@@ -93,12 +93,70 @@
 													<li><a href="video.html">Video</a></li>
 												</ul>
 											</li>
-											<li class=""><a href="gallery.html" style="color: black;">Gallery</a>
-												<ul>
-													<li><a href="events.html">events</a></li>
-													<li><a href="event-detail.html">events detail</a></li>
-												</ul>
+											<li class="dropdown has-megamenu" style="position: relative;">
+												<a href="gallery.html" style="color: black;">Gallery</a>
+												<!-- Megamenu -->
+												<div class="dropdown-menu" 
+													style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: none; z-index: 1000;">
+													<h3 class="ms-5" style="font-family: cursive; color: #575454;">Motorcycles</h3>
+													<div class="row mt-5" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">Karizma-xmr</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/mavrick-x440.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">mavrick-x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xpulse-200-4v</p>
+														</div>
+													</div>
+			
+													<div class="row" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/x440-hd.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xtreme-125r.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xtreme-125r</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xtreme-160r-4v</p>
+														</div>
+													</div>
+			
+													<div class="row" style="gap: 20px;">
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">Karizma-xmr</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/mavrick-x440.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">mavrick-x440</p>
+														</div>
+														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+															<img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
+															<p style="margin-top: 10px;">xpulse-200-4v</p>
+														</div>
+													</div>
+													
+												</div>
 											</li>
+											<script>
+												document.querySelectorAll('.has-megamenu').forEach(function (menuItem) {
+												menuItem.addEventListener('mouseenter', function () {
+												menuItem.querySelector('.dropdown-menu').style.display = 'block';
+												});
+												menuItem.addEventListener('mouseleave', function () {
+												menuItem.querySelector('.dropdown-menu').style.display = 'none';
+												});
+												});
+			
+											</script>
 											<li class=""><a href="adventure.html" style="color: black;">Book a Service</a>
 												<ul>
 													<li><a href="adventure.html">adventure</a></li>
