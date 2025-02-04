@@ -219,10 +219,10 @@
 	
 	
 	<!-- Bike Gallery -->
-<section class="gallery-section mt-1" style="background-color: #f9f9f9; padding: 60px 0;">
-    <div class="container">
+<section class="gallery-section mt-1 " style="background-color: #f9f9f9; padding: 60px 0;">
+    <div class="container ">
         <!-- Section Title -->
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 " >
             <h2 style="font-size: 28px; color: #333; margin-bottom: 15px;">Scooter Gallery</h2>
             <p style="font-size: 16px; color: #666;">
                 Explore our bike collection and see high-quality images of the latest models.
@@ -235,7 +235,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="gallery-item">
                     <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/scooter images/destini-prime-nav.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+                        <img src="assets/images/scooter images/destini-prime-nav.png" alt="Hero Bike Model 1" class="img-fluid " style="border-radius: 8px; max-width: 100%; height: auto;">
 						<p style="margin-top: 10px; font-weight: bold;">DESTINI PRIME</p>
 
                     </a>
@@ -278,6 +278,53 @@
            
     </div>
 </section>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const galleryContainer = document.querySelector(".gallery-section .row");
+
+        // Function to fetch scooter data
+        const fetchScooters = async () => {
+            try {
+                // Replace with your actual API endpoint
+                const response = await fetch(`http://127.0.0.1:8000/api/scooters/`);
+                if (!response.ok) throw new Error("Failed to fetch scooter data");
+
+                const scooters = await response.json();
+
+                // Check if the response contains any scooters
+                if (!scooters || scooters.length === 0) {
+                    galleryContainer.innerHTML = "<p class='text-center'>No scooters to display.</p>";
+                    return;
+                }
+
+                // Clear the gallery container before adding new items
+                galleryContainer.innerHTML = "";
+
+                // Loop through the scooters and create gallery items
+                scooters.forEach((scooter) => {
+                    const galleryItem = `
+                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <div class="gallery-item">
+                                <a href="${scooter.image_file}" data-lightbox="scooter-gallery" data-title="${scooter.title}">
+                                    <img src="${scooter.image_file}" alt="${scooter.title}" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+                                </a>
+                                <p style="margin-top: 10px; font-weight: bold;">${scooter.title || "No title available"}</p>
+                            </div>
+                        </div>`;
+                    galleryContainer.innerHTML += galleryItem;
+                });
+            } catch (error) {
+                console.error("Error fetching scooter data:", error);
+                galleryContainer.innerHTML = "<p class='text-center'>Failed to load scooters. Please try again later.</p>";
+            }
+        };
+
+        // Fetch scooters on page load
+        fetchScooters();
+    });
+</script>
+
+
 <!-- End Bike Gallery -->
 
 	

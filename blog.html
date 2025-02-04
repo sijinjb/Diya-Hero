@@ -228,55 +228,13 @@
 		<div class="container">
 			<!-- Section Title -->
 			<div class="text-center mb-5">
-				<h2 style="font-size: 28px; color: #d32f2f; margin-bottom: 15px;">Discover Hero MotoCorp Dealers in Kerala</h2>
-				<p style="font-size: 16px; color: white;">
-					Discover everything about Hero MotoCorp dealers in Kerala in our latest blog. Learn about their locations, services, genuine spare parts, and exclusive offers on Hero bikes and scooters. Your guide to authorized sales and expert maintenance.
-				</p>
+				<h2 style="font-size: 28px; color: #d32f2f; margin-bottom: 15px;" id="section-title">Loading...</h2>
+				<p style="font-size: 16px; color: white;" id="section-description">Please wait while we load the content.</p>
 			</div>
 	
 			<!-- Blog Grid -->
-			<div class="row">
-				<!-- Blog Post 1 -->
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-					<div class="blog-item">
-						<img src="assets/images/showroom image/diya showroom image.jpg" alt="Hero MotoCorp in Kerala" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
-						<div class="blog-content" style="padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-							<h3 style="font-size: 20px; color: #333;">Hero MotoCorp Dealers in Kollam</h3>
-							<p style="font-size: 14px; color: #666; margin-bottom: 10px;">
-								Explore our authorized Hero MotoCorp dealers in Kollam for top-quality bikes, scooters, and maintenance services.
-							</p>
-							<a href="blog-detail.html" style="font-size: 14px; color: #d32f2f; text-decoration: none;">Read More &raquo;</a>
-						</div>
-					</div>
-				</div>
-	
-				<!-- Blog Post 2 -->
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-					<div class="blog-item">
-						<img src="assets/images/showroom image/diya image 2.jpg" alt="Hero MotoCorp in Kerala" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
-						<div class="blog-content" style="padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-							<h3 style="font-size: 20px; color: #333;">Exclusive Hero Bike Offers in Trivandrum</h3>
-							<p style="font-size: 14px; color: #666; margin-bottom: 10px;">
-								Get the latest offers on Hero bikes and scooters at our Trivandrum dealership. Discover amazing deals.
-							</p>
-							<a href="blog-detail.html" style="font-size: 14px; color: #d32f2f; text-decoration: none;">Read More &raquo;</a>
-						</div>
-					</div>
-				</div>
-	
-				<!-- Blog Post 3 -->
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-					<div class="blog-item">
-						<img src="assets/images/showroom image/hero-service-image-web.png" alt="Hero MotoCorp Services" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
-						<div class="blog-content" style="padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
-							<h3 style="font-size: 20px; color: #333;">Hero MotoCorp Service Centers in Kerala</h3>
-							<p style="font-size: 14px; color: #666; margin-bottom: 10px;">
-								Ensure your Hero bike runs smoothly with expert maintenance at authorized Hero MotoCorp service centers in Kollam and Trivandrum.
-							</p>
-							<a href="blog-detail.html" style="font-size: 14px; color: #d32f2f; text-decoration: none;">Read More &raquo;</a>
-						</div>
-					</div>
-				</div>
+			<div class="row" id="blog-container">
+				<!-- Blog posts will be dynamically inserted here -->
 			</div>
 	
 			<!-- See More Button -->
@@ -284,7 +242,52 @@
 				<a href="blog-list.html" class="btn btn-primary" style="padding: 10px 30px; font-size: 16px;">See All Blogs</a>
 			</div>
 		</div>
+	
+		<script>
+			// Fetch data from the backend API
+			fetch('http://127.0.0.1:8000/api/blogs/') // Update the API URL to your backend endpoint
+				.then(response => response.json())
+				.then(data => {
+					// Update the section title and description
+					document.getElementById('section-title').textContent = 'Discover Hero MotoCorp Dealers in Kerala';
+					document.getElementById('section-description').textContent = 
+						'Discover everything about Hero MotoCorp dealers in Kerala in our latest blog. Learn about their locations, services, genuine spare parts, and exclusive offers on Hero bikes and scooters. Your guide to authorized sales and expert maintenance.';
+	
+					// Get the blog container
+					const blogContainer = document.getElementById('blog-container');
+	
+					// Clear existing content
+					blogContainer.innerHTML = '';
+	
+					// Loop through the blog posts and create HTML elements
+					data.forEach(blog => {
+						const blogPost = `
+							<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+								<div class="blog-item">
+									<img src="${blog.image_url}" alt="${blog.title}" class="img-fluid" style="border-radius: 8px; width: 100%; height: auto;">
+									<div class="blog-content" style="padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+										<h3 style="font-size: 20px; color: #333;">${blog.title}</h3>
+										<p style="font-size: 14px; color: #666; margin-bottom: 10px;">
+											${blog.content}
+										</p>
+										<a href="${blog.link}" style="font-size: 14px; color: #d32f2f; text-decoration: none;">Read More &raquo;</a>
+									</div>
+								</div>
+							</div>
+						`;
+						// Append the blog post to the container
+						blogContainer.innerHTML += blogPost;
+					});
+				})
+				.catch(error => {
+					console.error('Error fetching blog data:', error.message || error);
+					document.getElementById('section-title').textContent = 'Error loading content';
+					document.getElementById('section-description').textContent = 
+						'There was an issue fetching the blog posts. Please try again later.';
+				});
+		</script>
 	</section>
+	
 	
 
 	<!-- End News Three -->

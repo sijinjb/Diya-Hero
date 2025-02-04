@@ -16,6 +16,9 @@
 
 <link rel="shortcut icon" href="assets/images/logo re png.png" type="image/x-icon">
 <link rel="icon" href="assets/images/logo re png.png" type="image/x-icon">
+<!-- <link rel="stylesheet" href="lightbox.css"> -->
+<!-- <script src="path/to/lightbox.js"></script> -->
+
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -232,198 +235,179 @@
 	</header>
 	<!-- End Main Header -->
 	
+	<section class="gallery-section mt-5" style="background-color: #f9f9f9; padding: 60px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+		<div class="container">
+		  <!-- Section Title -->
+		  <div class="text-center mb-5" style="background: linear-gradient(135deg, #d41323, #ff4b5c); padding: 50px 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden;">
+			<h2 style="font-size: 45px; color: #fff; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; font-family: 'Roboto', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+			  Bike Gallery
+			</h2>
+			<p style="font-size: 22px; color: #fff; line-height: 1.8; font-family: 'Poppins', sans-serif; font-weight: 500; max-width: 700px; margin: 0 auto;">
+			  Explore our exclusive collection of high-end bikes with premium images showcasing the latest models in all their glory.
+			</p>
+			<div style="position: absolute; top: -20px; right: -20px; background: rgba(255,255,255,0.1); width: 150px; height: 150px; border-radius: 50%; filter: blur(20px);"></div>
+		  </div>
+	  
+		  <!-- Tabs for Categories -->
+		  <ul class="nav nav-pills mb-4 justify-content-center" id="categoryTabs" style="border-radius: 30px; background: #fff; padding: 15px 50px; gap: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+			<li class="nav-item">
+			  <a class="nav-link active" data-bs-toggle="pill" href="#practical" style="font-size: 20px; font-weight: 600; color: #fff; padding: 14px 30px; border-radius: 30px; background: linear-gradient(135deg, #d41323, #ff4b5c); transition: all 0.4s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+				Practical
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="pill" href="#executive" style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">
+				Executive
+			  </a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-bs-toggle="pill" href="#performance" style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">
+				Performance
+			  </a>
+			</li>
+		  </ul>
+	  
+		  <!-- Tab Content -->
+		  <div class="tab-content">
+			<!-- Practical Category -->
+			<div class="tab-pane fade show active" id="practical">
+			  <div class="row">
+				<!-- Dynamic items for Practical -->
+				<div class="col-md-4 mb-4">
+				  <div class="card" style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">
+					<img src="path/to/practical-bike.jpg" alt="Splendor+ XTEC" class="card-img-top gallery-img">
+					<div class="card-body text-center" style="background-color: #fff; padding: 20px;">
+					  <p style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">Splendor+ XTEC</p>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+	  
+			<!-- Executive Category -->
+			<div class="tab-pane fade" id="executive">
+			  <div class="row">
+			  </div>
+			</div>
+	  
+			<!-- Performance Category -->
+			<div class="tab-pane fade" id="performance">
+			  <div class="row">
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+	  <style>
+		.gallery-img {
+		  width: 100%;
+		  height: 250px;
+		  object-fit: cover;
+		  transition: transform 0.3s ease;
+		  border-radius: 15px;
+		}
+		.gallery-img:hover {
+		  transform: scale(1.05);
+		}
+		.nav-link:hover {
+		  background: linear-gradient(135deg, #d41323, #ff4b5c) !important;
+		  color: #fff !important;
+		  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+	  </style>
+	  
+	  
+	  <!-- CSS for Image Consistency -->
+	  <style>
+		.gallery-img {
+		  width: 100%;
+		  height: 250px; /* Fixed height */
+		  object-fit: cover; /* Maintains aspect ratio while filling the box */
+		  transition: transform 0.3s ease;
+		  border-radius: 15px;
+		}
+		.gallery-img:hover {
+		  transform: scale(1.05);
+		}
+	  </style>
+	  
+	<script>
+		// Script to enhance image hover effects
+		document.addEventListener("DOMContentLoaded", () => {
+			const images = document.querySelectorAll('.gallery-section .card-img-top');
+			
+			images.forEach(img => {
+				img.addEventListener('mouseover', () => {
+					img.style.transform = 'scale(1.05)';
+				});
+	
+				img.addEventListener('mouseout', () => {
+					img.style.transform = 'scale(1)';
+				});
+			});
+		});
+	</script>
 	
 	
-	<!-- Bike Gallery -->
-<section class="gallery-section mt-1" style="background-color: #f9f9f9; padding: 60px 0;">
-    <div class="container">
-        <!-- Section Title -->
-        <div class="text-center mb-5">
-            <h2 style="font-size: 28px; color: #333; margin-bottom: 15px;">Bike Gallery</h2>
-            <p style="font-size: 16px; color: #666;">
-                Explore our bike collection and see high-quality images of the latest models.
-            </p>
-        </div>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll('#categoryTabs .nav-link');
+    const tabContent = document.querySelector('.tab-content');
 
-        <!-- Gallery Grid -->
-        <div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+    // Function to fetch gallery data by category
+    const fetchGallery = async (category) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/images/?category=${category}`);
+            if (!response.ok) throw new Error("Failed to fetch gallery data");
 
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+            const data = await response.json();
+            console.log(data);  // Log to check if the response is correct
+            const categoryContainer = tabContent.querySelector(`#${category} .row`);
+            
+            // Check if the response contains images
+            if (!data || data.length === 0) {
+                categoryContainer.innerHTML = "<p>No images to display.</p>";
+                return;
+            }
 
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+            // Clear existing items in the category tab
+            categoryContainer.innerHTML = "";
 
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+            // Populate gallery items for the category
+            data.forEach(item => {
+                const galleryItem = `
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="gallery-item text-center">
+                            <a href="${item.image}" data-lightbox="bike-gallery" data-title="${item.title}">
+                                <img src="${item.image_file}" alt="${item.title}" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
+								<p style="font-size: 15px; font-family: cursive; font-weight: 600; color: #333; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px;">${item.title || 'No title available'}</p>                            </a>
+                        </div>
+                    </div>`
+					;
+                categoryContainer.innerHTML += galleryItem;
+            });
+        } catch (error) {
+            console.error("Error:", error);
+            categoryContainer.innerHTML = "<p>Failed to load gallery. Please try again later.</p>";
+        }
+    };
 
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+    // Add event listeners to tabs
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = tab.getAttribute('href').replace('#', '');
+            fetchGallery(category); // Fetch data for the clicked category
+        });
+    });
 
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-		<div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+    // Fetch gallery data for the default tab
+    fetchGallery('practical'); // Default tab
+});
 
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-		<div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination (optional, adjust as needed) -->
-        <div class="text-center">
-            <ul class="pagination justify-content-center">
-                <li class="page-item"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
+	</script>
+		
 <!-- End Bike Gallery -->
 
 	
