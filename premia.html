@@ -20,7 +20,117 @@
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+	.whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      /* Distance from the bottom */
+      right: 20px;
+      /* Distance from the right */
+      z-index: 1000;
+      /* Ensures it stays on top */
+    }
 
+    .whatsapp-icon img {
+      width: 60px;
+      /* Set the size of the icon */
+      height: 60px;
+      /* Set the size of the icon */
+      border-radius: 50%;
+      /* Circular icon */
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      /* Shadow effect */
+      cursor: pointer;
+      /* Shows pointer on hover */
+      transition: transform 0.3s ease;
+      /* Animation */
+    }
+
+    .whatsapp-icon img:hover {
+      transform: scale(1.1);
+      /* Zoom effect on hover */
+    }
+	.gallery-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: white;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.gallery-item img {
+			width: 100%;
+			/* Ensures images take full width of their container */
+			max-width: 300px;
+			/* Limits the max width */
+			height: 200px;
+			/* Fixed height for uniformity */
+			object-fit: cover;
+			/* Prevents distortion and maintains aspect ratio */
+			border-radius: 8px;
+			/* Optional: Adds rounded corners */
+		}
+	.gallery-section {
+		background-color: rgba(0, 0, 0, 0.5);
+		/* Fallback for older browsers */
+		padding: 60px 0;
+		position: relative;
+		/* Needed for the z-index to work */
+	}
+
+	.text-light {
+		color: white;
+		/* Ensures text visibility over video */
+	}
+	#galleryContainer {  
+	/* background:  #d32f2f; Semi-transparent white background for card   */
+	border-radius: 10px; /* Rounded corners */  
+	overflow: hidden; /* Ensure content fits within card */  
+	transition: transform 0.2s; /* For minor animations */  
+}  
+
+#galleryContainer:hover {  
+	transform: scale(1.05); /* Scale effect on hover */  
+}  
+.gallery-heading {  
+    font-family: 'Montserrat', sans-serif; /* Use a modern font */  
+    font-size: 2.5rem; /* Increase size */  
+    font-weight: bold; /* Make it bold */  
+    color: #ff5733; /* Set a vibrant color (adjust as needed) */  
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add shadow for depth */  
+    margin-bottom: 10px; /* Space below the heading */  
+}  
+
+.gallery-description {  
+    font-family: 'Open Sans', sans-serif; /* Use a clean font */  
+    font-size: 1.2rem; /* Adjust size */  
+    font-weight: 300; /* Light weight for contrast */  
+    color: #f8f9fa; /* Light color for the text */  
+    line-height: 1.5; /* Improve readability */  
+    max-width: 600px; /* Limit width */  
+    margin: 0 auto; /* Center align */  
+}
+.scooter-title {
+			display: inline-block;
+			position: relative;
+			padding: 10px 20px;
+
+			margin-top: 10px;
+
+			color: #1d1b1b;
+
+			font-size: 20px;
+
+			font-weight: bold;
+
+			border-radius: 30px;
+
+			overflow: hidden;
+
+		}
+</style>
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
@@ -78,95 +188,181 @@
 								<a href="about.html" style="color: black">About</a>
 							  </li>
 							  <li class="dropdown has-megamenu" style="position: relative">
-								<a href="scooters.html" style="color: black">Scooters</a>
-								<!-- Megamenu for Scooters -->
-								<div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: none; z-index: 1000;">
-									<h3 class="ms-5" style="font-family: cursive; color: #575454;">Scooter Models</h3>
+								<a class="nav-link" href="scooters.html"
+									style="color: black">Scooters</a>
+								<!-- <div class="dropdown-menu"
+									style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">
+									<h3 class="ms-5" style="font-family: cursive; color: #575454;">
+										Scooter Models</h3>
 									<div class="row mt-5" style="gap: 20px;">
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/scooter images/destini-prime-nav.png" alt="Scooter 1" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">Destini Prime</p>
-									  </div>
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/scooter images/navigation_destini_125_xtec.png" alt="Scooter 2" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">New Destini 125</p>
-									  </div>
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/scooter images/pleasure-connect-navigation.png" alt="Scooter 3" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">Pleasure+ XTEC</p>
-									  </div>
-									</div>
-								  </div>
-							  </li>
-							  <li class="dropdown has-megamenu" style="position: relative">
-								<a href="premia.html" style="color: black">Premia</a>
-								<!-- Megamenu for Premia -->
-								<div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: none; z-index: 1000;">
-								  <h3 class="ms-5" style="font-family: cursive; color: #575454;">Premia Models</h3>
-								  <div class="row mt-5" style="gap: 20px;">
-									<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-									  <img src="assets/images/Bike Images/premia1.jpg" alt="Premia 1" style="width: 100%; border-radius: 5px;">
-									  <p style="margin-top: 10px;">Premia 1</p>
-									</div>
-									<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-									  <img src="assets/images/Bike Images/premia2.jpg" alt="Premia 2" style="width: 100%; border-radius: 5px;">
-									  <p style="margin-top: 10px;">Premia 2</p>
-									</div>
-									<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-									  <img src="assets/images/Bike Images/premia3.jpg" alt="Premia 3" style="width: 100%; border-radius: 5px;">
-									  <p style="margin-top: 10px;">Premia 3</p>
-									</div>
-								  </div>
-								</div>
-							  </li>
-							  <li class="dropdown has-megamenu" style="position: relative">
-								<a href="gallery.html" style="color: black">Bikes</a>
-								<!-- Megamenu for Bikes -->
-								<div class="dropdown-menu" style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: none; z-index: 1000;">
-									<h3 class="ms-5" style="font-family: cursive; color: #575454;">Motorcycles</h3>
-									<div class="row mt-5" style="gap: 20px;">
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Bike 1" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">Karizma-xmr</p>
-									  </div>
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/Bike Images/mavrick-x440.png" alt="Bike 2" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">mavrick-x440</p>
-									  </div>
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										<img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
-										<p style="margin-top: 10px;">xpulse-200-4v</p>
-									  </div>
-	  
-									  <div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										  <img src="assets/images/Bike Images/xtreme-125r.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
-										  <p style="margin-top: 10px;">xtreme-125r</p>
-										</div>
-	  
 										<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										  <img src="assets/images/Bike Images/x440-hd.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
-										  <p style="margin-top: 10px;">x440-hd</p>
+											<img src="assets/images/scooter images/destini_prime.png"
+												alt="Scooter Model 1"
+												style="width: 100%; border-radius: 5px;">
+											<div class="scooter-title">DESTINI PRIME</div>
 										</div>
-	  
 										<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-										  <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Bike 3" style="width: 100%; border-radius: 5px;">
-										  <p style="margin-top: 10px;">xtreme-160r-4v</p>
+											<img src="assets/images/scooter images/destini_125_zx+.svg"
+												alt="Scooter Model 2"
+												style="width: 100%; border-radius: 5px;">
+											<div class="scooter-title">NEW DESTINI 125</div>
+										</div>
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+											<img src="assets/images/scooter images/pleasure-plus-xtec.png"
+												alt="Scooter Model 3"
+												style="width: 100%; border-radius: 5px;">
+											<div class="scooter-title">PLEASURE+ XTEC</div>
+										</div>
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">
+											<img src="assets/images/scooter images/xoom.png"
+												alt="Scooter Model 4"
+												style="width: 100%; border-radius: 5px;">
+											<div class="scooter-title">XOOM</div>
 										</div>
 									</div>
-								  </div>
-							  </li>
+								</div> -->
+							</li>  
+							<li class="dropdown has-megamenu" style="position: relative">  
+								<a class="nav-link" href="premia.html" style="color: black">Premia</a>  
+								<!-- <div class="dropdown-menu"  
+									style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">  
+									<h3 class="ms-5" style="font-family: cursive; color: #575454;">Premia Models</h3>  
+									<div class="row mt-5" style="gap: 20px;">  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/premium_bikes/xtreme_250r.png" alt="XTREME 250R" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">XTREME 250R</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/premium_bikes/xpulse_210.png" alt="XPULSE 210" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">XPULSE 210</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/premium_bikes/Mavrick.png" alt="MAVRICK 440" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">MAVRICK 440</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/premium_bikes/Karizma_xmr.png" alt="KARIZMA XMR" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">KARIZMA XMR</div>  
+										</div>  
+							
+									</div>  
+								</div>   -->
+							</li> 
+							<li class="dropdown has-megamenu" style="position: relative">  
+								<a class="nav-link" href="gallery.html" style="color: black">Bikes</a>  
+								<!-- <div class="dropdown-menu"  
+									style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">  
+									<h3 class="ms-5" style="font-family: cursive; color: #575454;">Motorcycles</h3>  
+									<div class="row mt-5" style="gap: 20px;">  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/Bike Images/practical bikes/splendor-plus.png" alt="Splendor+" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">Splendor+</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/Bike Images/practical bikes/hf-deluxe.png" alt="HF DELUXE" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">HF DELUXE</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/Bike Images/executive bikes/glamour-xtec.png" alt="GLAMOUR XTEC" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">GLAMOUR XTEC</div>  
+										</div>  
+							
+										<div class="col-md-3 text-center" style="margin-bottom: 10px;">  
+											<img src="assets/images/Bike Images/executive bikes/super-splendor.png" alt="SUPER SPLENDOR" style="width: 100%; border-radius: 5px;">  
+											<div class="scooter-title">SUPER SPLENDOR</div>  
+										</div>  
+							
+									</div>  
+								</div>   -->
+							</li>
 							  <li>
 								<a href="adventure.html" style="color: black">Book a Service</a>
 							  </li>
 							  <li>
+								<a href="testdrive.html" style="color: black">Test Drive</a>
+							  </li>
+							  <li>
 								<a href="blog.html" style="color: black">Blog</a>
 							  </li>
+							  <li><a href="showroom.html" style="color: black;">Showrooms</a></li>
 							  <li>
 								<a href="contact.html" style="color: black">Contact</a>
 							  </li>
 							</ul>
 						  </div>
 						</nav>
+						<!-- <script>  
+							function fetchData(apiUrl, listId) {  
+								fetch(apiUrl)  
+									.then(response => response.json())  
+									.then(data => {  
+										const list = document.getElementById(listId);  
+										list.innerHTML = ''; // Clear previous items  
+					
+										data.forEach(item => {  
+											const col = document.createElement('div');  
+											col.className = 'col-md-3 text-center';  
+											col.style.marginBottom = '10px';  
+											col.innerHTML = `  
+												<img src="${item.image_file}" alt="${item.title}" style="width: 100%; border-radius: 5px;">  
+												<p style="margin-top: 10px;">${item.title}</p>  
+											`;  
+											list.appendChild(col);  
+										});  
+									})  
+									.catch(error => {  
+										console.error('Error fetching data:', error);  
+									});  
+							}  
+					
+							document.addEventListener('DOMContentLoaded', function () {  
+								// Scooters Dropdown  
+								const scooterDropdown = document.querySelector('a[href="scooters.html"]');  
+								const scooterMenu = scooterDropdown.nextElementSibling;  
+					
+								scooterDropdown.addEventListener('mouseenter', () => {  
+									fetchData('http://127.0.0.1:8000/api/megascooter/', 'scooter-list');  
+									scooterMenu.style.display = 'block';  
+								});  
+					
+								scooterDropdown.addEventListener('mouseleave', () => {  
+									scooterMenu.style.display = 'none';  
+								});  
+					
+								// Premia Dropdown  
+								const premiaDropdown = document.querySelector('a[href="premia.html"]');  
+								const premiaMenu = premiaDropdown.nextElementSibling;  
+					
+								premiaDropdown.addEventListener('mouseenter', () => {  
+									fetchData('http://127.0.0.1:8000/api/megapremium/', 'premia-list');  
+									premiaMenu.style.display = 'block';  
+								});  
+					
+								premiaDropdown.addEventListener('mouseleave', () => {  
+									premiaMenu.style.display = 'none';  
+								});  
+					
+								// Bikes Dropdown  
+								const bikeDropdown = document.querySelector('a[href="gallery.html"]');  
+								const bikeMenu = bikeDropdown.nextElementSibling;  
+					
+								bikeDropdown.addEventListener('mouseenter', () => {  
+									fetchData('http://127.0.0.1:8000/api/megabike/', 'bike-list');  
+									bikeMenu.style.display = 'block';  
+								});  
+					
+								bikeDropdown.addEventListener('mouseleave', () => {  
+									bikeMenu.style.display = 'none';  
+								});  
+							});  
+						</script> -->
 					  </div>
 					  <!-- End Nav Outer -->
 			  
@@ -215,204 +411,230 @@
 		
 	</header>
 	<!-- End Main Header -->
+	<!-- video section -->
+	<div class="video-section" style="position: relative; height: 80vh; overflow: hidden;">  
+		<video autoplay muted loop style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%;   
+				min-width: 100%; min-height: 100%; z-index: 0; transform: translate(-50%, -50%);">  
+			<source src="assets/videos/video8.mp4" type="video/mp4">  
+			Your browser does not support the video tag.  
+		</video>  
+	</div> 
+	 <!-- end video section -->
+	 <section class="gallery-section mt-5" style="background-color: #1c1c1c; padding: 60px 0;">  
+		<div class="container">  
+			<!-- Section Title -->  
+			<div class="text-center mb-5" style="position: relative; z-index: 2;">  
+				<h2 class="text-danger gallery-heading">Premia Gallery</h2>  
+				<p class="text-light gallery-description">Explore our bike collection and see high-quality images of the latest models.</p>  
+			</div>  
 	
-	
-	
-	<!-- Bike Gallery -->
-<section class="gallery-section mt-1" style="background-color: #f9f9f9; padding: 60px 0;">
-    <div class="container">
-        <!-- Section Title -->
-        <div class="text-center mb-5">
-            <h2 style="font-size: 28px; color: #333; margin-bottom: 15px;">Bike Gallery</h2>
-            <p style="font-size: 16px; color: #666;">
-                Explore our bike collection and see high-quality images of the latest models.
-            </p>
-        </div>
+			<!-- Gallery Grid -->  
+			<div class="row g-4" id="galleryContainer">  
+				<!-- Static content for premium scooters -->  
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/xtreme_250r.png" data-lightbox="bike-gallery" data-title="XTREME 250R">  
+							<img src="assets/images/premium_bikes/xtreme_250r.png" alt="XTREME 250R" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 250R</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 250 cc Max. Torque 25 nm</p>  
+						<a href="path/to/brochure1.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div>  
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/xpulse_210.png" data-lightbox="bike-gallery" data-title="XPULSE 210">  
+							<img src="assets/images/premium_bikes/xpulse_210.png" alt="XPULSE 210" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XPULSE 210</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 210 cc Max. Torque 20.7 nm</p>  
+						<a href="path/to/brochure2.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div>  
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/Mavrick.png" data-lightbox="bike-gallery" data-title="MAVRICK 440">  
+							<img src="assets/images/premium_bikes/Mavrick.png" alt="MAVRICK 440" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">MAVRICK 440</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 440 cc Max. Torque 36 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div>  
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/Karizma_xmr.png" data-lightbox="bike-gallery" data-title="KARIZMA XMR">  
+							<img src="assets/images/premium_bikes/Karizma_xmr.png" alt="KARIZMA XMR" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">KARIZMA XMR</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 210 cc Max. Torque 20.4 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div> 
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/Harleyx440bike-.png" data-lightbox="bike-gallery" data-title="HARLEY-DAVIDSON X440">  
+							<img src="assets/images/premium_bikes/Harleyx440bike-.png" alt="HARLEY-DAVIDSON X440" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">HARLEY-DAVIDSON X440</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 440 cc Max. Torque 38 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div> 
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/xtreme_160r_4v.png" data-lightbox="bike-gallery" data-title="XTREME 160R 4V">  
+							<img src="assets/images/premium_bikes/xtreme_160r_4v.png" alt="XTREME 160R 4V" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 160R 4V</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 163.2 cc Max. Torque 14.6 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div> 
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/xpulse-200-4v.png" data-lightbox="bike-gallery" data-title="XPULSE 200 4V">  
+							<img src="assets/images/premium_bikes/xpulse-200-4v.png" alt="XPULSE 200 4V" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XPULSE 200 4V</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 199.6 cc Max. Torque 17.35 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div> 
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
+					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+						<a href="assets/images/premium_bikes/xtreme_160r.png" data-lightbox="bike-gallery" data-title="XTREME 160R">  
+							<img src="assets/images/premium_bikes/xtreme_160r.png" alt="XTREME 160R" class="img-fluid rounded">  
+						</a>  
+						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 160R</p>  
+						<p style="font-size: 14px; color: #666;">ENGINE 163.2 cc Max. Torque 14 nm</p>  
+						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
+					</div>  
+				</div>  
+			</div>  
+		</div>  
+	</section>
+	<!-- <section class="gallery-section mt-5" style="background-color: #1c1c1c; padding: 60px 0;">
+		
+		<div class="container"> -->
+			<!-- Section Title -->
+			<!-- <div class="text-center mb-5" style="position: relative; z-index: 2;">
+				<h2 class="text-danger gallery-heading">Premia Gallery</h2>
+				<p class="text-light gallery-description">Explore our bike collection and see high-quality images of the latest models.
+				</p>
+			</div> -->
 
-        <!-- Gallery Grid -->
-        <div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+			<!-- Gallery Grid -->
+			<!-- <div class="row g-4" id="galleryContainer"> -->
+				<!-- Dynamic content will be injected here by JavaScript -->
+			<!-- </div>
+		</div>
+	</section> -->
 
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+	<!-- <script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const galleryContainer = document.querySelector("#galleryContainer");
 
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+			// Function to fetch scooter data  
+			const fetchPremium = async () => {
+				try {
+					// Replace with your actual API endpoint for bikes  
+					const response = await fetch(`http://127.0.0.1:8000/api/premium/`);
+					if (!response.ok) throw new Error("Failed to fetch scooter data");
 
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+					const scooters = await response.json();
 
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+					// Check if the response contains any scooters  
+					if (!scooters || scooters.length === 0) {
+						galleryContainer.innerHTML = "<p class='text-center text-light'>No scooters to display.</p>";
+						return;
+					}
 
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-		<div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+					// Clear the gallery container before adding new items  
+					galleryContainer.innerHTML = "";
 
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+					// Loop through the scooters and create gallery items  
+					scooters.forEach((premium) => {
+						console.log(premium); // Log entire scooter object  
+						const brochureButton = premium.brochure_file ?
+							`<a href="${premium.brochure_file}" class="btn  mt-2" style="width: 100%; background:#ff5733;" download>Brochure</a>`
+							: '<span class="text-muted mt-2">No brochure available</span>'; // Default message  
 
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
+						const galleryItem = `  
+							<div class="col-lg-4 col-md-6 mb-4">  
+							<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
+							<a href="${premium.image_file}" data-lightbox="bike-gallery" data-title="${premium.title}">  
+							   <img src="${premium.image_file}" alt="${premium.title}" class="img-fluid rounded" style="max-width: 100%; height: auto;">  
+							</a>  
+							<p class="mt-2" style="font-weight: bold;">${premium.title || "No title available"}</p>  
+							${brochureButton}  
+							</div>  
+							</div>`;
+						galleryContainer.innerHTML += galleryItem;
+					});
+				} catch (error) {
+					console.error("Error fetching scooter data:", error);
+					galleryContainer.innerHTML = "<p class='text-center text-light'>Failed to load scooters. Please try again later.</p>";
+				}
+			};
 
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-		<div class="row">
-            <!-- Gallery Item 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike1.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 1">
-                        <img src="assets/images/Bike Images/mavrick-x440.png" alt="Hero Bike Model 1" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike2.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 2">
-                        <img src="assets/images/Bike Images/x440-hd.png" alt="Hero Bike Model 2" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike3.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 3">
-                        <img src="assets/images/Bike Images/xpulse-200-4v.png" alt="Hero Bike Model 3" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike4.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 4">
-                        <img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="Hero Bike Model 4" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike5.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 5">
-                        <img src="assets/images/Bike Images/karizma-xmr-preview.png" alt="Hero Bike Model 5" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Gallery Item 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="gallery-item">
-                    <a href="assets/images/gallery/bike6.jpg" data-lightbox="bike-gallery" data-title="Hero Bike Model 6">
-                        <img src="assets/images/Bike Images/xtreme-125r.png" alt="Hero Bike Model 6" class="img-fluid" style="border-radius: 8px; max-width: 100%; height: auto;">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pagination (optional, adjust as needed) -->
-        <div class="text-center">
-            <ul class="pagination justify-content-center">
-                <li class="page-item"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">Next</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- End Bike Gallery -->
-
-	
-
-	
+			// Fetch scooters on page load  
+			fetchPremium();
+		});  
+	</script> -->
+	<!-- <script>  
+		document.addEventListener("DOMContentLoaded", () => {  
+			const galleryContainer = document.querySelector("#galleryContainer");  
+		
+			// Function to fetch premium scooter data  
+			const fetchPremium = async () => {  
+				try {  
+					// Replace with your actual API endpoint for premium scooters  
+					const response = await fetch(`http://127.0.0.1:8000/api/premium/`);  
+					if (!response.ok) throw new Error("Failed to fetch premium scooter data");  
+		
+					const premium = await response.json();  
+		
+					// Check if the response contains any scooters  
+					if (!premium || premium.length === 0) {  
+						galleryContainer.innerHTML = "<p class='text-center text-light'>No scooters to display.</p>";  
+						return;  
+					}  
+		
+					// Clear the gallery container before adding new items  
+					galleryContainer.innerHTML = "";  
+		
+					// Loop through the scooters and create gallery items  
+					premium.forEach((premium) => {  
+						console.log(premium); // Log entire scooter object  
+		
+						const brochureButton = premium.brochure_file  
+							? `<a href="${premium.brochure_file}" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>`  
+							: '<span class="text-muted mt-2">No brochure available</span>'; // Default message  
+		
+						const galleryItem = `  
+							<div class="col-lg-4 col-md-6 mb-4">
+                            <div class="gallery-item text-center border rounded">
+                                <a href="${premium.image_file}" data-lightbox="bike-gallery" data-title="${premium.title}">
+                                    <img src="${premium.image_file}" alt="${premium.title}" class="img-fluid">
+                                </a>
+                                <p class="mt-2" style="font-size: 24px; font-weight: bold; color: #333;">${premium.title || "No title available"}</p>
+                                <p style="font-size: 14px; color: #666;">${premium.description || ""}</p>
+                                ${brochureButton}
+                            </div>
+                        </div>`; 
+						galleryContainer.innerHTML += galleryItem;  
+					});  
+				} catch (error) {  
+					console.error("Error fetching premium scooter data:", error);  
+					galleryContainer.innerHTML = "<p class='text-center text-light'>Failed to load scooters. Please try again later.</p>";  
+				}  
+			};  
+		
+			// Fetch premium scooters on page load  
+			fetchPremium();  
+		});  
+		</script> -->
 	<!-- Main Footer -->
 	<footer class="main-footer mt-1" style="background-color: #1d1b1b; color: #fff; padding: 60px 0; position: relative; overflow: hidden;">
 		<!-- Background pattern -->
@@ -483,7 +705,7 @@
 			<!-- Footer Bottom Text -->
 			<div class="row text-center mt-4">
 				<div class="col-12">
-					<p style="font-size: 12px; color: #aaa;">&copy; 2025 Hero Motors. All rights reserved.</p>
+					<p style="font-size: 12px; color: #aaa;">&copy; 2025 Diya Hero. All rights reserved.</p>
 				</div>
 			</div>
 		</div>
@@ -646,7 +868,11 @@
 		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
 	</svg>
 </div>
-
+<div class="whatsapp-icon">
+    <a href="https://wa.me/9745015888?text=Hello!%20I%20would%20like%20to%20know%20more%20about..." target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+  </div>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
