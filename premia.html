@@ -130,6 +130,53 @@
 			overflow: hidden;
 
 		}
+		
+        
+        .gallery-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .bike-title {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px;
+        }
+        .bike-details {
+            font-size: 14px;
+            color: #666;
+        }
+        .btn-know-more {
+            display: block;
+            width: 100%;
+            background: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn-know-more:hover {
+            background: #d64529;
+        }
 </style>
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
@@ -420,7 +467,7 @@
 		</video>  
 	</div> 
 	 <!-- end video section -->
-	 <section class="gallery-section mt-5" style="background-color: #1c1c1c; padding: 60px 0;">  
+	 <section class="gallery-section " style="background-color: #1c1c1c; padding: 60px 0;">  
 		<div class="container">  
 			<!-- Section Title -->  
 			<div class="text-center mb-5" style="position: relative; z-index: 2;">  
@@ -429,89 +476,100 @@
 			</div>  
 	
 			<!-- Gallery Grid -->  
-			<div class="row g-4" id="galleryContainer">  
-				<!-- Static content for premium scooters -->  
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/xtreme_250r.png" data-lightbox="bike-gallery" data-title="XTREME 250R">  
-							<img src="assets/images/premium_bikes/xtreme_250r.png" alt="XTREME 250R" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 250R</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 250 cc Max. Torque 25 nm</p>  
-						<a href="path/to/brochure1.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div>  
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/xpulse_210.png" data-lightbox="bike-gallery" data-title="XPULSE 210">  
-							<img src="assets/images/premium_bikes/xpulse_210.png" alt="XPULSE 210" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XPULSE 210</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 210 cc Max. Torque 20.7 nm</p>  
-						<a href="path/to/brochure2.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div>  
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/Mavrick.png" data-lightbox="bike-gallery" data-title="MAVRICK 440">  
-							<img src="assets/images/premium_bikes/Mavrick.png" alt="MAVRICK 440" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">MAVRICK 440</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 440 cc Max. Torque 36 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div>  
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/Karizma_xmr.png" data-lightbox="bike-gallery" data-title="KARIZMA XMR">  
-							<img src="assets/images/premium_bikes/Karizma_xmr.png" alt="KARIZMA XMR" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">KARIZMA XMR</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 210 cc Max. Torque 20.4 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div> 
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/Harleyx440bike-.png" data-lightbox="bike-gallery" data-title="HARLEY-DAVIDSON X440">  
-							<img src="assets/images/premium_bikes/Harleyx440bike-.png" alt="HARLEY-DAVIDSON X440" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">HARLEY-DAVIDSON X440</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 440 cc Max. Torque 38 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div> 
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/xtreme_160r_4v.png" data-lightbox="bike-gallery" data-title="XTREME 160R 4V">  
-							<img src="assets/images/premium_bikes/xtreme_160r_4v.png" alt="XTREME 160R 4V" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 160R 4V</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 163.2 cc Max. Torque 14.6 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div> 
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/xpulse-200-4v.png" data-lightbox="bike-gallery" data-title="XPULSE 200 4V">  
-							<img src="assets/images/premium_bikes/xpulse-200-4v.png" alt="XPULSE 200 4V" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XPULSE 200 4V</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 199.6 cc Max. Torque 17.35 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div> 
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">  
-					<div class="gallery-item text-center border rounded" style="background-color: white; padding: 20px;">  
-						<a href="assets/images/premium_bikes/xtreme_160r.png" data-lightbox="bike-gallery" data-title="XTREME 160R">  
-							<img src="assets/images/premium_bikes/xtreme_160r.png" alt="XTREME 160R" class="img-fluid rounded">  
-						</a>  
-						<p class="mt-2" style="font-weight: bold; font-size: 24px; color: #333;">XTREME 160R</p>  
-						<p style="font-size: 14px; color: #666;">ENGINE 163.2 cc Max. Torque 14 nm</p>  
-						<a href="path/to/brochure3.pdf" class="btn mt-2" style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;" download>Know More</a>  
-					</div>  
-				</div>  
-			</div>  
+			<div class="container py-5">
+				<div class="row g-4" id="galleryContainer">
+					<!-- Bike Cards -->
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/Xtreme-250r.html" data-lightbox="bike-gallery" data-title="XTREME 250R">
+								<img src="assets/images/premium_bikes/xtreme_250r.png" alt="XTREME 250R">
+							</a>
+							<p class="bike-title">XTREME 250R</p>
+							<p class="bike-details">ENGINE 250 cc | Max. Torque 25 nm</p>
+							<a href="path/to/brochure1.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/Xpulse-210.html" data-lightbox="bike-gallery" data-title="XPULSE 210">
+								<img src="assets/images/premium_bikes/xpulse_210.png" alt="XPULSE 210">
+							</a>
+							<p class="bike-title">XPULSE 210</p>
+							<p class="bike-details">ENGINE 210 cc | Max. Torque 20.7 nm</p>
+							<a href="assets/brochures/" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+			
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/Mavrick.html" data-lightbox="bike-gallery" data-title="MAVRICK 440">
+								<img src="assets/images/premium_bikes/Mavrick.png" alt="MAVRICK 440">
+							</a>
+							<p class="bike-title">MAVRICK 440</p>
+							<p class="bike-details">ENGINE 440 cc | Max. Torque 36 nm</p>
+							<a href="path/to/brochure3.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+			
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/KarizmaXMR.html" data-lightbox="bike-gallery" data-title="KARIZMA XMR">
+								<img src="assets/images/premium_bikes/Karizma_xmr.png" alt="KARIZMA XMR">
+							</a>
+							<p class="bike-title">KARIZMA XMR</p>
+							<p class="bike-details">ENGINE 210 cc | Max. Torque 20.4 nm</p>
+							<a href="path/to/brochure4.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+			
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.harley-davidsonx440.com/" data-lightbox="bike-gallery" data-title="HARLEY-DAVIDSON X440">
+								<img src="assets/images/premium_bikes/Harleyx440bike-.png" alt="HARLEY-DAVIDSON X440">
+							</a>
+							<p class="bike-title">HARLEY-DAVIDSON X440</p>
+							<p class="bike-details">ENGINE 440 cc | Max. Torque 38 nm</p>
+							<a href="path/to/brochure5.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+			
+			
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/performance/xpulse-200-4v.html" data-lightbox="bike-gallery" data-title="XPULSE 200 4V">
+								<img src="assets/images/premium_bikes/xpulse-200-4v.png" alt="XPULSE 200 4V">
+							</a>
+							<p class="bike-title">XPULSE 200 4V</p>
+							<p class="bike-details">ENGINE 199.6 cc | Max. Torque 17.35 nm</p>
+							<a href="path/to/brochure6.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/performance/xtreme-160r-4v.html" data-lightbox="bike-gallery" data-title="KARIZMA XMR">
+								<img src="assets/images/Bike Images/xtreme-160r-4v-preview-new.png" alt="XTREME 160R 4V">
+							</a>
+							<p class="bike-title">XTREME 160R 4V</p>
+							<p class="bike-details">ENGINE 163.2 cc | Max. Torque 14.6 nm</p>
+							<a href="path/to/brochure4.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="gallery-item text-center">
+							<a href="https://www.heromotocorp.com/en-in/motorcycles/performance/xtreme-160r.html" data-lightbox="bike-gallery" data-title="KARIZMA XMR">
+								<img src="assets/images/Bike Images/xtreme_160r.png" alt="XTREME 160R">
+							</a>
+							<p class="bike-title">XTREME 160R</p>
+							<p class="bike-details">ENGINE 163.2 cc | Max. Torque 14 nm</p>
+							<a href="path/to/brochure4.pdf" class="btn btn-know-more" download>Know More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			 
 		</div>  
 	</section>
 	<!-- <section class="gallery-section mt-5" style="background-color: #1c1c1c; padding: 60px 0;">
@@ -705,7 +763,7 @@
 			<!-- Footer Bottom Text -->
 			<div class="row text-center mt-4">
 				<div class="col-12">
-					<p style="font-size: 12px; color: #aaa;">&copy; 2025 Diya Hero. All rights reserved.</p>
+					<p style="font-size: 12px; color: #aaa;">&copy; 2025 Diya Group. All rights reserved.</p>
 				</div>
 			</div>
 		</div>

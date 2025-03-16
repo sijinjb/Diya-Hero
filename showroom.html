@@ -68,6 +68,23 @@
       transform: scale(1.1);
       /* Zoom effect on hover */
     }
+	.header {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #d9534f; /* Bootstrap danger color */
+        }
+        .img-container {
+            padding: 10px;
+            text-align: center;
+        }
+        .img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
 </style>
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
@@ -440,25 +457,41 @@
 			Your browser does not support the video tag.  
 		</video>  
 	</div> 
+
+	<div class="container">
+        <div class="header">Diya Bike Showroom</div>
+        
+        <div class="row">
+            <div class="col-md-4 img-container">
+                <img src="assets/images/diya auto mobiles.jpg" alt="Diya Bike Showroom 1">
+            </div>
+            <div class="col-md-4 img-container">
+                <img src="assets/images/diya biking.jpg" alt="Diya Bike Showroom 2">
+            </div>
+            <div class="col-md-4 img-container">
+                <img src="assets/images/Diya Riders.pdf" alt="Diya Bike Showroom 3">
+            </div>
+        </div>
+    </div>
 	<!-- News Three -->
-	<section class="blog-section mt-1" style="background-color: black; padding: 60px 0;">  
-		<div class="container">  
+	<!-- <section class="blog-section mt-1" style="background-color: black; padding: 60px 0;">   -->
+		<!-- <div class="container">   -->
 			<!-- Section Title -->  
-			<div class="text-center mb-5">  
-				<h2 style="font-size: 28px; color: #d32f2f; margin-bottom: 15px;" id="section-title">Loading...</h2>  
-				<p style="font-size: 16px; color: white;" id="section-description">Please wait while we load the content.</p>  
-			</div>  
+			<!-- <div class="text-center mb-5">   -->
+				<!-- <h2 style="font-size: 28px; color: #d32f2f; margin-bottom: 15px;" id="section-title">Loading...</h2>   -->
+				<!-- <p style="font-size: 16px; color: white;" id="section-description">Please wait while we load the content.</p>   -->
+			<!-- </div>   -->
 	
 			<!-- Branches Grid -->  
-			<div class="row d-flex justify-content-center" id="branch-container">  
+			<!-- <div class="row d-flex justify-content-center" id="branch-container">   -->
 				<!-- Branch posts will be dynamically inserted here -->  
-			</div>  
+			<!-- </div>   -->
 	
 			<!-- See More Button -->  
 			<!-- <div class="text-center mt-4">  
 				<a href="showroom_list.html" class="btn btn-primary" style="padding: 10px 30px; font-size: 16px;">See All Branches</a>  
 			</div>   -->
-		</div>  
+		<!-- </div>   -->
 	
 		<!-- <script>  
 			// Fetch data from the backend API  
@@ -502,8 +535,8 @@
 						'There was an issue fetching the branch posts. Please try again later.';  
 				});  
 		</script>   -->
-	</section>
-	<script>  
+	<!-- </section> -->
+	<!-- <script>  
 		// Fetch data from the backend API  
 		fetch('http://127.0.0.1:8000/api/showroom/') // Update the API URL to your backend endpoint  
 			.then(response => response.json())  
@@ -544,7 +577,7 @@
 				document.getElementById('section-description').textContent =  
 					'There was an issue fetching the branch posts. Please try again later.';  
 			});  
-	</script> 
+	</script>  -->
 	
 
 	<!-- End News Three -->
@@ -627,7 +660,7 @@
 				<!-- Footer Bottom Text -->
 				<div class="row text-center mt-4">
 					<div class="col-12">
-						<p style="font-size: 12px; color: #aaa;">&copy; 2025 Hero Motors. All rights reserved.</p>
+						<p style="font-size: 12px; color: #aaa;">&copy; 2025 Diya Group. All rights reserved.</p>
 					</div>
 				</div>
 			</div>

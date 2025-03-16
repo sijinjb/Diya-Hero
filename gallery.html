@@ -1,246 +1,251 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Diya Hero</title>
 
-<head>
-	<meta charset="utf-8">
-	<title>Diya Hero</title>
+    <!-- Stylesheets -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/meanmenu.min.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
 
-	<!-- Stylesheets -->
-	<link href="assets/css/bootstrap.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link href="assets/css/meanmenu.min.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-	<!-- Fonts -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo re png.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/images/logo re png.png" type="image/x-icon" />
+    <!-- <link rel="stylesheet" href="lightbox.css"> -->
+    <!-- <script src="path/to/lightbox.js"></script> -->
 
-	<link rel="shortcut icon" href="assets/images/logo re png.png" type="image/x-icon">
-	<link rel="icon" href="assets/images/logo re png.png" type="image/x-icon">
-	<!-- <link rel="stylesheet" href="lightbox.css"> -->
-	<!-- <script src="path/to/lightbox.js"></script> -->
+    <style>
+      .whatsapp-icon {
+        position: fixed;
+        bottom: 20px;
+        /* Distance from the bottom */
+        right: 20px;
+        /* Distance from the right */
+        z-index: 1000;
+        /* Ensures it stays on top */
+      }
 
-	<style>
-		.whatsapp-icon {
-			position: fixed;
-			bottom: 20px;
-			/* Distance from the bottom */
-			right: 20px;
-			/* Distance from the right */
-			z-index: 1000;
-			/* Ensures it stays on top */
-		}
+      .whatsapp-icon img {
+        width: 60px;
+        /* Set the size of the icon */
+        height: 60px;
+        /* Set the size of the icon */
+        border-radius: 50%;
+        /* Circular icon */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        /* Shadow effect */
+        cursor: pointer;
+        /* Shows pointer on hover */
+        transition: transform 0.3s ease;
+        /* Animation */
+      }
 
-		.whatsapp-icon img {
-			width: 60px;
-			/* Set the size of the icon */
-			height: 60px;
-			/* Set the size of the icon */
-			border-radius: 50%;
-			/* Circular icon */
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-			/* Shadow effect */
-			cursor: pointer;
-			/* Shows pointer on hover */
-			transition: transform 0.3s ease;
-			/* Animation */
-		}
+      .whatsapp-icon img:hover {
+        transform: scale(1.1);
+        /* Zoom effect on hover */
+      }
 
-		.whatsapp-icon img:hover {
-			transform: scale(1.1);
-			/* Zoom effect on hover */
-		}
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        /* Behind content */
+      }
 
-		.video-background {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-			/* Behind content */
-		}
+      .video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+        /* Adjust for visibility */
+      }
 
-		.video {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
-			object-fit: cover;
-			transform: translate(-50%, -50%);
-			opacity: 0.3;
-			/* Adjust for visibility */
-		}
+      .gallery-section {
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Fallback for older browsers */
+        padding: 60px 0;
+        position: relative;
+        /* Needed for the z-index to work */
+      }
 
-		.gallery-section {
-			background-color: rgba(0, 0, 0, 0.5);
-			/* Fallback for older browsers */
-			padding: 60px 0;
-			position: relative;
-			/* Needed for the z-index to work */
-		}
+      .gallery-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+      }
 
-		.gallery-img {
-			width: 100%;
-			height: 250px;
-			object-fit: cover;
-			transition: transform 0.3s ease;
-			border-radius: 15px;
-		}
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
 
-		.gallery-img:hover {
-			transform: scale(1.05);
-		}
+      .nav-link:hover {
+        background: linear-gradient(135deg, #d41323, #ff4b5c) !important;
+        color: #fff !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .scooter-title {
+        display: inline-block;
+        position: relative;
+        padding: 10px 20px;
 
-		.nav-link:hover {
-			background: linear-gradient(135deg, #d41323, #ff4b5c) !important;
-			color: #fff !important;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-		}
-		.scooter-title {
-			display: inline-block;
-			position: relative;
-			padding: 10px 20px;
+        margin-top: 10px;
 
-			margin-top: 10px;
+        color: #1d1b1b;
 
-			color: #1d1b1b;
+        font-size: 20px;
 
-			font-size: 20px;
+        font-weight: bold;
 
-			font-weight: bold;
+        border-radius: 30px;
 
-			border-radius: 30px;
+        overflow: hidden;
+      }
+    </style>
 
-			overflow: hidden;
+    <!-- CSS for Image Consistency -->
+    <style>
+      .gallery-img {
+        width: 100%;
+        height: 250px;
+        /* Fixed height */
+        object-fit: cover;
+        /* Maintains aspect ratio while filling the box */
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+      }
 
-		}
-	</style>
+      .gallery-img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
 
+    <!--[if lt IE 9
+      ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
+    ><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  </head>
 
-	<!-- CSS for Image Consistency -->
-	<style>
-		.gallery-img {
-			width: 100%;
-			height: 250px;
-			/* Fixed height */
-			object-fit: cover;
-			/* Maintains aspect ratio while filling the box */
-			transition: transform 0.3s ease;
-			border-radius: 15px;
-		}
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor -->
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
+      <!-- Cursor End -->
 
-		.gallery-img:hover {
-			transform: scale(1.05);
-		}
-	</style>
-	<!-- Responsive -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <!-- Preloader -->
+      <div class="preloader"></div>
+      <!-- End Preloader -->
 
-	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
+      <!-- Main Header -->
+      <header class="main-header">
+        <!-- Header Lower -->
+        <div class="header-lower" style="background-color: white">
+          <div class="auto-container">
+            <div class="inner-container">
+              <div
+                class="d-flex justify-content-between align-items-center flex-wrap"
+              >
+                <!-- Logo Box -->
+                <div class="logo-box">
+                  <div class="logo">
+                    <a href="index.html">
+                      <img
+                        src="assets/images/diya hero logo.jpg"
+                        alt=""
+                        title=""
+                        style="width: 132px; height: 51px"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <!-- End Logo Box -->
 
-<body>
+                <!-- Nav Outer -->
+                <div class="nav-outer d-flex align-items-center flex-wrap">
+                  <!-- Main Menu -->
+                  <nav class="main-menu navbar-expand-md">
+                    <div class="navbar-header">
+                      <!-- Toggle Button -->
+                      <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                      >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
 
-	<div class="page-wrapper">
-
-		<!-- Cursor -->
-		<div class="cursor"></div>
-		<div class="cursor-follower"></div>
-		<!-- Cursor End -->
-
-		<!-- Preloader -->
-		<div class="preloader"></div>
-		<!-- End Preloader -->
-
-		<!-- Main Header -->
-		<header class="main-header">
-
-			<!-- Header Lower -->
-			<div class="header-lower" style="background-color: white">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="d-flex justify-content-between align-items-center flex-wrap">
-							<!-- Logo Box -->
-							<div class="logo-box">
-								<div class="logo">
-									<a href="index.html">
-										<img src="assets/images/diya hero logo.jpg" alt="" title=""
-											style="width: 132px; height: 51px" />
-									</a>
-								</div>
-							</div>
-							<!-- End Logo Box -->
-
-							<!-- Nav Outer -->
-							<div class="nav-outer d-flex align-items-center flex-wrap">
-								<!-- Main Menu -->
-								<nav class="main-menu navbar-expand-md">
-									<div class="navbar-header">
-										<!-- Toggle Button -->
-										<button class="navbar-toggler" type="button" data-toggle="collapse"
-											data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-											aria-expanded="false" aria-label="Toggle navigation">
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-										</button>
-									</div>
-
-									<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-										<ul class="navigation clearfix">
-											<li>
-												<a href="index.html" style="color: black">Home</a>
-											</li>
-											<li>
-												<a href="about.html" style="color: black">About</a>
-											</li>
-											<li class="dropdown has-megamenu" style="position: relative">
-												<a class="nav-link" href="scooters.html"
-													style="color: black">Scooters</a>
-												<!-- <div class="dropdown-menu"
-													style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">
-													<h3 class="ms-5" style="font-family: cursive; color: #575454;">
-														Scooter Models</h3>
-													<div class="row mt-5" style="gap: 20px;">
-														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-															<img src="assets/images/scooter images/destini_prime.png"
-																alt="Scooter Model 1"
-																style="width: 100%; border-radius: 5px;">
-															<div class="scooter-title">DESTINI PRIME</div>
-														</div>
-														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-															<img src="assets/images/scooter images/destini_125_zx+.svg"
-																alt="Scooter Model 2"
-																style="width: 100%; border-radius: 5px;">
-															<div class="scooter-title">NEW DESTINI 125</div>
-														</div>
-														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-															<img src="assets/images/scooter images/pleasure-plus-xtec.png"
-																alt="Scooter Model 3"
-																style="width: 100%; border-radius: 5px;">
-															<div class="scooter-title">PLEASURE+ XTEC</div>
-														</div>
-														<div class="col-md-3 text-center" style="margin-bottom: 10px;">
-															<img src="assets/images/scooter images/xoom.png"
-																alt="Scooter Model 4"
-																style="width: 100%; border-radius: 5px;">
-															<div class="scooter-title">XOOM</div>
-														</div>
-													</div>
-												</div> -->
-											</li>
-											<li class="dropdown has-megamenu" style="position: relative">  
-												<a class="nav-link" href="premia.html" style="color: black">Premia</a>  
-												<!-- <div class="dropdown-menu"  
+                    <div
+                      class="navbar-collapse collapse clearfix"
+                      id="navbarSupportedContent"
+                    >
+                      <ul class="navigation clearfix">
+                        <li>
+                          <a href="index.html" style="color: black">Home</a>
+                        </li>
+                        <li>
+                          <a href="about.html" style="color: black">About</a>
+                        </li>
+                        <li
+                          class="dropdown has-megamenu"
+                          style="position: relative"
+                        >
+                          <a
+                            class="nav-link"
+                            href="scooters.html"
+                            style="color: black"
+                            >Scooters</a
+                          >
+                        </li>
+                        <li
+                          class="dropdown has-megamenu"
+                          style="position: relative"
+                        >
+                          <a
+                            class="nav-link"
+                            href="premia.html"
+                            style="color: black"
+                            >Premia</a
+                          >
+                          <!-- <div class="dropdown-menu"  
 													style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">  
 													<h3 class="ms-5" style="font-family: cursive; color: #575454;">Premia Models</h3>  
 													<div class="row mt-5" style="gap: 20px;">  
@@ -267,10 +272,18 @@
 											
 													</div>  
 												</div>   -->
-											</li>
-											<li class="dropdown has-megamenu" style="position: relative">  
-												<a class="nav-link" href="gallery.html" style="color: black">Bikes</a>  
-												<!-- <div class="dropdown-menu"  
+                        </li>
+                        <li
+                          class="dropdown has-megamenu"
+                          style="position: relative"
+                        >
+                          <a
+                            class="nav-link"
+                            href="gallery.html"
+                            style="color: black"
+                            >Bikes</a
+                          >
+                          <!-- <div class="dropdown-menu"  
 													style="position: absolute; top: 100%; left: 0; width: 850px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; display: block; z-index: 1000;">  
 													<h3 class="ms-5" style="font-family: cursive; color: #575454;">Motorcycles</h3>  
 													<div class="row mt-5" style="gap: 20px;">  
@@ -297,24 +310,34 @@
 											
 													</div>  
 												</div>   -->
-											</li>
-											<li>
-												<a href="adventure.html" style="color: black">Book a Service</a>
-											</li>
-											<li>
-												<a href="testdrive.html" style="color: black">Test Drive</a>
-											  </li>
-											<li>
-												<a href="blog.html" style="color: black">Blog</a>
-											</li>
-											<li><a href="showroom.html" style="color: black;">Showrooms</a></li>
-											<li>
-												<a href="contact.html" style="color: black">Contact</a>
-											</li>
-										</ul>
-									</div>
-								</nav>
-								<!-- <script>
+                        </li>
+                        <li>
+                          <a href="adventure.html" style="color: black"
+                            >Book a Service</a
+                          >
+                        </li>
+                        <li>
+                          <a href="testdrive.html" style="color: black"
+                            >Test Drive</a
+                          >
+                        </li>
+                        <li>
+                          <a href="blog.html" style="color: black">Blog</a>
+                        </li>
+                        <li>
+                          <a href="showroom.html" style="color: black"
+                            >Showrooms</a
+                          >
+                        </li>
+                        <li>
+                          <a href="contact.html" style="color: black"
+                            >Contact</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <!-- <script>
 									function fetchData(apiUrl, listId) {
 										fetch(apiUrl)
 											.then(response => response.json())
@@ -379,72 +402,100 @@
 										});
 									});  
 								</script> -->
-							</div>
-							<!-- End Nav Outer -->
+                </div>
+                <!-- End Nav Outer -->
 
-							<!-- Outer Box -->
-							<div class="outer-box d-flex align-items-center flex-wrap">
-								<!-- Header Options Box -->
-								<div class="header-options_box d-flex align-items-center">
-									<!-- Search Btn -->
-									<div class="search-box-btn search-box-outer">
-										<span class="icon fa fa-search"></span>
-									</div>
-								</div>
-								<!-- Mobile Navigation Toggler -->
-								<div class="mobile-nav-toggler">
-									<span class="icon flaticon-menu"></span>
-								</div>
-							</div>
-							<!-- End Outer Box -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<script>
-				document.querySelectorAll(".has-megamenu").forEach(function (menuItem) {
-					menuItem.addEventListener("mouseenter", function () {
-						menuItem.querySelector(".dropdown-menu").style.display = "block";
-					});
-					menuItem.addEventListener("mouseleave", function () {
-						menuItem.querySelector(".dropdown-menu").style.display = "none";
-					});
-				});
-			</script>
-			<!-- End Header Lower -->
+                <!-- Outer Box -->
+                <div class="outer-box d-flex align-items-center flex-wrap">
+                  <!-- Header Options Box -->
+                  <div class="header-options_box d-flex align-items-center">
+                    <!-- Search Btn -->
+                    <div class="search-box-btn search-box-outer">
+                      <span class="icon fa fa-search"></span>
+                    </div>
+                  </div>
+                  <!-- Mobile Navigation Toggler -->
+                  <div class="mobile-nav-toggler">
+                    <span class="icon flaticon-menu"></span>
+                  </div>
+                </div>
+                <!-- End Outer Box -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document
+            .querySelectorAll(".has-megamenu")
+            .forEach(function (menuItem) {
+              menuItem.addEventListener("mouseenter", function () {
+                menuItem.querySelector(".dropdown-menu").style.display =
+                  "block";
+              });
+              menuItem.addEventListener("mouseleave", function () {
+                menuItem.querySelector(".dropdown-menu").style.display = "none";
+              });
+            });
+        </script>
+        <!-- End Header Lower -->
 
-			<!-- Mobile Menu  -->
-			<div class="mobile-menu">
-				<div class="menu-backdrop"></div>
-				<div class="close-btn"><span class="icon flaticon-close-1"></span></div>
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <div class="close-btn">
+            <span class="icon flaticon-close-1"></span>
+          </div>
 
-				<nav class="menu-box">
-					<div class="logo"><a href="index.html"><img src="assets/images/diya hero logo.jpg" alt="" title=""
-								style="width: 132px; height: 51px;"></a></div>
-					<div class="menu-outer">
-						<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-					</div>
-				</nav>
-			</div>
-			<!-- End Mobile Menu -->
-
-		</header>
-		<!-- End Main Header -->
-		<!-- video-section -->
-		<div class="video-section" style="position: relative; height: 80vh; overflow: hidden;">
-			<video autoplay muted loop style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%;   
-				min-width: 100%; min-height: 100%; z-index: 0; transform: translate(-50%, -50%);">
-				<source src="assets/videos/video7.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-		</div>
-		<!-- end video -->
-		<!-- <section class="gallery-section mt-5"
+          <nav class="menu-box">
+            <div class="logo">
+              <a href="index.html"
+                ><img
+                  src="assets/images/diya hero logo.jpg"
+                  alt=""
+                  title=""
+                  style="width: 132px; height: 51px"
+              /></a>
+            </div>
+            <div class="menu-outer">
+              <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+      </header>
+      <!-- End Main Header -->
+      <!-- video-section -->
+      <div
+        class="video-section"
+        style="position: relative; height: 80vh; overflow: hidden"
+      >
+        <video
+          autoplay
+          muted
+          loop
+          style="
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+          "
+        >
+          <source src="assets/videos/video7.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <!-- end video -->
+      <!-- <section class="gallery-section mt-5"
 			style="background-color: #f9f9f9; padding: 60px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
 			<div class="container"> -->
-				<!-- Section Title -->
-				<!-- <div class="text-center mb-5"
+      <!-- Section Title -->
+      <!-- <div class="text-center mb-5"
 					style="background: linear-gradient(135deg, #d41323, #ff4b5c); padding: 50px 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden;">
 					<h2
 						style="font-size: 45px; color: #fff; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; font-family: 'Roboto', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
@@ -460,36 +511,15 @@
 					</div>
 				</div> -->
 
-				<!-- Tabs for Categories -->
-				<!-- <ul class="nav nav-pills mb-4 justify-content-center" id="categoryTabs"
-					style="border-radius: 30px; background: #fff; padding: 15px 50px; gap: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-					<li class="nav-item">
-						<a class="nav-link active" data-bs-toggle="pill" href="#practical"
-							style="font-size: 20px; font-weight: 600; color: #fff; padding: 14px 30px; border-radius: 30px; background: linear-gradient(135deg, #d41323, #ff4b5c); transition: all 0.4s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-							Practical
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-bs-toggle="pill" href="#executive"
-							style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">
-							Executive
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-bs-toggle="pill" href="#performance"
-							style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">
-							Performance
-						</a>
-					</li>
-				</ul> -->
-
-				<!-- Tab Content -->
-				<!-- <div class="tab-content"> -->
-					<!-- Practical Category -->
-					<!-- <div class="tab-pane fade show active" id="practical"> -->
-						<!-- <div class="row"> -->
-							<!-- Dynamic items for Practical -->
-							<!-- <div class="col-md-4 mb-4">
+      <!-- Tabs for Categories -->
+     
+      <!-- Tab Content -->
+      <!-- <div class="tab-content"> -->
+      <!-- Practical Category -->
+      <!-- <div class="tab-pane fade show active" id="practical"> -->
+      <!-- <div class="row"> -->
+      <!-- Dynamic items for Practical -->
+      <!-- <div class="col-md-4 mb-4">
 								<div class="card"
 									style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">
 									<img src="path/to/practical-bike.jpg" alt="Splendor+ XTEC"
@@ -504,14 +534,14 @@
 						</div>
 					</div> -->
 
-					<!-- Executive Category -->
-					<!-- <div class="tab-pane fade" id="executive">
+      <!-- Executive Category -->
+      <!-- <div class="tab-pane fade" id="executive">
 						<div class="row">
 						</div>
 					</div> -->
 
-					<!-- Performance Category -->
-					<!-- <div class="tab-pane fade" id="performance">
+      <!-- Performance Category -->
+      <!-- <div class="tab-pane fade" id="performance">
 						<div class="row">
 						</div>
 					</div>
@@ -519,7 +549,7 @@
 			</div>
 		</section> -->
 
-		<!-- <script>
+      <!-- <script>
 			document.addEventListener("DOMContentLoaded", () => {
 				const tabs = document.querySelectorAll('#categoryTabs .nav-link');
 				const tabContent = document.querySelector('.tab-content');
@@ -581,495 +611,1022 @@
 			});
 
 		</script> -->
-		<section class="gallery-section mt-5"  
-    style="background-color: #f9f9f9; padding: 60px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">  
+      <section
+        class="gallery-section bg-dark"
+        style="
+          background-color: #f9f9f9;
+          padding: 60px 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        "
+      >
+        <div class="container">
+          <!-- Section Title -->
+          <div
+            class="text-center mb-5"
+            style="
+              background: linear-gradient(135deg, #d41323, #ff4b5c);
+              padding: 50px 20px;
+              border-radius: 15px;
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+              position: relative;
+              overflow: hidden;
+            "
+          >
+            <h2
+              style="
+                font-size: 45px;
+                color: #fff;
+                font-weight: 800;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                font-family: 'Roboto', sans-serif;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+              "
+            >
+              Bike Gallery
+            </h2>
+            <p
+              style="
+                font-size: 22px;
+                color: #fff;
+                line-height: 1.8;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                max-width: 700px;
+                margin: 0 auto;
+              "
+            >
+              Explore our exclusive collection of high-end bikes with premium
+              images showcasing the latest models in all their glory.
+            </p>
+            <div
+              style="
+                position: absolute;
+                top: -20px;
+                right: -20px;
+                background: rgba(255, 255, 255, 0.1);
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                filter: blur(20px);
+              "
+            ></div>
+          </div>
 
-    <div class="container">  
-        <!-- Section Title -->  
-        <div class="text-center mb-5"  
-            style="background: linear-gradient(135deg, #d41323, #ff4b5c); padding: 50px 20px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden;">  
-            <h2  
-                style="font-size: 45px; color: #fff; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; font-family: 'Roboto', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">  
-                Bike Gallery  
-            </h2>  
-            <p  
-                style="font-size: 22px; color: #fff; line-height: 1.8; font-family: 'Poppins', sans-serif; font-weight: 500; max-width: 700px; margin: 0 auto;">  
-                Explore our exclusive collection of high-end bikes with premium images showcasing the latest  
-                models in all their glory.  
-            </p>  
-            <div  
-                style="position: absolute; top: -20px; right: -20px; background: rgba(255,255,255,0.1); width: 150px; height: 150px; border-radius: 50%; filter: blur(20px);">  
-            </div>  
-        </div>  
+          <!-- Tabs for Categories -->
+          <ul
+            class="nav nav-pills mb-4 justify-content-center"
+            id="categoryTabs"
+            style="
+              border-radius: 30px;
+              background: #fff;
+              padding: 15px 50px;
+              gap: 15px;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                data-bs-toggle="pill"
+                href="#practical"
+                style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #fff;
+                  padding: 14px 30px;
+                  border-radius: 30px;
+                  background: linear-gradient(135deg, #d41323, #ff4b5c);
+                  transition: all 0.4s ease;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                "
+              >
+                Practical
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="pill"
+                href="#executive"
+                style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #d41323;
+                  padding: 14px 30px;
+                  border-radius: 30px;
+                  background: #f1f1f1;
+                  transition: all 0.4s ease;
+                "
+              >
+                Executive
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="pill"
+                href="#performance"
+                style="
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #d41323;
+                  padding: 14px 30px;
+                  border-radius: 30px;
+                  background: #f1f1f1;
+                  transition: all 0.4s ease;
+                "
+              >
+                Performance
+              </a>
+            </li>
+          </ul>
 
-        <!-- Tabs for Categories -->  
-        <ul class="nav nav-pills mb-4 justify-content-center"  
-            id="categoryTabs"   
-            style="border-radius: 30px; background: #fff; padding: 15px 50px; gap: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">  
-            <li class="nav-item">  
-                <a class="nav-link active" data-bs-toggle="pill" href="#practical"  
-                    style="font-size: 20px; font-weight: 600; color: #fff; padding: 14px 30px; border-radius: 30px; background: linear-gradient(135deg, #d41323, #ff4b5c); transition: all 0.4s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">  
-                    Practical  
-                </a>  
-            </li>  
-            <li class="nav-item">  
-                <a class="nav-link" data-bs-toggle="pill" href="#executive"  
-                    style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">  
-                    Executive  
-                </a>  
-            </li>  
-            <li class="nav-item">  
-                <a class="nav-link" data-bs-toggle="pill" href="#performance"  
-                    style="font-size: 20px; font-weight: 600; color: #d41323; padding: 14px 30px; border-radius: 30px; background: #f1f1f1; transition: all 0.4s ease;">  
-                    Performance  
-                </a>  
-            </li>  
-        </ul>  
+          <!-- Tab Content -->
+          <div class="tab-content">
+            <!-- Practical Category -->
+            <div class="tab-pane fade show active" id="practical">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/practical bikes/splendor-plus.png"
+                      alt="Splendor+ "
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        Splendor+
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        97.2 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="assets/brochures/SplendorPlus_Family_Brochure_2.0.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/practical bikes/hf-deluxe.png"
+                      alt="HF DELUXE"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        HF DELUXE
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        97.2 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="assets/brochures/HF100_Mileage_Ka_Hero_Leaflet_A4_v1_CTC.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/practical bikes/splendor-plus-xtec.png"
+                      alt="SPLENDOR+ XTEC"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        SPLENDOR+ XTEC
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        97.2 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="assets/brochures/splendor-plus-xtec-2-brochure.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <!-- Tab Content -->  
-        <div class="tab-content">  
-            <!-- Practical Category -->  
-            <div class="tab-pane fade show active" id="practical">  
-                <div class="row">  
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/practical bikes/splendor-plus.png" alt="Splendor+ "  class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-                                    Splendor+</p>  
-                                <p style="font-size: 14px; color: #666;">97.2 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure1.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-					<div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/practical bikes/hf-deluxe.png" alt="HF DELUXE"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-									HF DELUXE</p>  
-                                <p style="font-size: 14px; color: #666;">97.2 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure2.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div> 
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/practical bikes/splendor-plus-xtec.png" alt="SPLENDOR+ XTEC"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-                                    SPLENDOR+ XTEC</p>  
-                                <p style="font-size: 14px; color: #666;">97.2 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure2.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-                </div>  
-            </div>  
+            <!-- Executive Category -->
+            <div class="tab-pane fade" id="executive">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/executive bikes/glamour-xtec.png"
+                      alt="GLAMOUR XTEC"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        GLAMOUR XTEC
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        124.7 cc Air Cooled 4 stroke
+                      </p>
+                      <a
+                        href="assets/brochures/glamour-xtec.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/executive bikes/glamour.png"
+                      alt="GLAMOUR"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        GLAMOUR
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        125 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="path/to/brochure4.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/executive bikes/super-splendor.png"
+                      alt="SUPER SPLENDOR"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        SUPER SPLENDOR
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        124.7 cc Air Cooled 4 stroke
+                      </p>
+                      <a
+                        href="assets/brochures/Super-Splendor-Xtec.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <!-- Executive Category -->  
-            <div class="tab-pane fade" id="executive">  
-                <div class="row">  
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/executive bikes/glamour-xtec.png" alt="GLAMOUR XTEC"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-                                    GLAMOUR XTEC</p>  
-                                <p style="font-size: 14px; color: #666;">124.7 cc Air Cooled 4 stroke</p>  
-                                <a href="assets/images/" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div> 
-					<div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/executive bikes/glamour.png" alt="GLAMOUR"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-									GLAMOUR</p>  
-                                <p style="font-size: 14px; color: #666;">125 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure4.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>   
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/executive bikes/super-splendor.png" alt="SUPER SPLENDOR"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-                                    SUPER SPLENDOR</p>  
-                                <p style="font-size: 14px; color: #666;">124.7 cc Air Cooled 4 stroke</p>  
-                                <a href="assets/images/" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-                </div>  
-            </div>  
+            <!-- Performance Category -->
+            <div class="tab-pane fade" id="performance">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/perfomance bikes/xtreme_160r_4v.png"
+                      alt="XTREME 160R 4V"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        XTREME 160R 4V
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        163.2 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="assets/brochures/xtreme-160r-4v-new-brochure.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/perfomance bikes/xpulse-200-4v.png"
+                      alt="XPULSE 200 4V"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        XPULSE 200 4V
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        199.6 cc Oil Cooled, 4 stroke 4 Valve single cylinder
+                        OHC
+                      </p>
+                      <a
+                        href="assets/brochures/Brochure_Xpulse2004V_2023.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <div
+                    class="card"
+                    style="
+                      border: none;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                      border-radius: 15px;
+                      overflow: hidden;
+                    "
+                  >
+                    <img
+                      src="assets/images/Bike Images/perfomance bikes/Karizma_xmr.png"
+                      alt="KARIZMA XMR"
+                      class="card-img-top gallery-img"
+                    />
+                    <div
+                      class="card-body text-center"
+                      style="background-color: #fff; padding: 20px"
+                    >
+                      <p
+                        style="
+                          font-size: 20px;
+                          font-weight: 700;
+                          color: #333;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                        "
+                      >
+                        KARIZMA XMR
+                      </p>
+                      <p style="font-size: 14px; color: #666">
+                        210 cc Air cooled, 4-stroke, Single cylinder, OHC
+                      </p>
+                      <a
+                        href="path/to/brochure6.pdf"
+                        class="btn mt-2"
+                        style="
+                          width: 100%;
+                          background: #ff5733;
+                          color: white;
+                          border: 2px solid #ff5733;
+                          border-radius: 4px;
+                          font-weight: bold;
+                        "
+                        download
+                        >Know More</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Bike Gallery -->
 
-            <!-- Performance Category -->  
-            <div class="tab-pane fade" id="performance">  
-                <div class="row">  
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/perfomance bikes/xtreme_160r_4v.png" alt="XTREME 160R 4V"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-									XTREME 160R 4V</p>  
-                                <p style="font-size: 14px; color: #666;">163.2 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure5.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-					<div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/perfomance bikes/xpulse-200-4v.png" alt="XPULSE 200 4V"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-                                    XPULSE 200 4V</p>  
-                                <p style="font-size: 14px; color: #666;">199.6 cc Oil Cooled, 4 stroke 4 Valve single cylinder OHC</p>  
-                                <a href="assets/images/Bike Images/" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-                    <div class="col-md-4 mb-4">  
-                        <div class="card"  
-                            style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden;">  
-                            <img src="assets/images/Bike Images/perfomance bikes/Karizma_xmr.png" alt="KARIZMA XMR"  
-                                class="card-img-top gallery-img">  
-                            <div class="card-body text-center" style="background-color: #fff; padding: 20px;">  
-                                <p  
-                                    style="font-size: 20px; font-weight: 700; color: #333; text-transform: uppercase; letter-spacing: 1px;">  
-									KARIZMA XMR</p>  
-                                <p style="font-size: 14px; color: #666;">210 cc Air cooled, 4-stroke, Single cylinder, OHC</p>  
-                                <a href="path/to/brochure6.pdf" class="btn mt-2"  
-                                    style="width: 100%; background: white; color: #ff5733; border: 2px solid #ff5733; border-radius: 4px; font-weight: bold;"  
-                                    download>Know More</a>  
-                            </div>  
-                        </div>  
-                    </div>  
-                </div>  
-            </div>  
-        </div>  
-    </div>  
-</section>
-		<!-- End Bike Gallery -->
+      <!-- Main Footer -->
+      <footer
+        class="main-footer mt-1"
+        style="
+          background-color: #1d1b1b;
+          color: #fff;
+          padding: 60px 0;
+          position: relative;
+          overflow: hidden;
+        "
+      >
+        <!-- Background pattern -->
+        <div
+          style="
+            background: url('assets/images/footer-pattern.svg') no-repeat center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 0;
+          "
+        ></div>
 
+        <div class="container position-relative" style="z-index: 1">
+          <!-- Footer Top: Description and Quick Links -->
+          <div class="row text-start mb-5">
+            <div class="col-md-4 mb-4">
+              <h5
+                style="
+                  color: #fff;
+                  font-size: 20px;
+                  font-weight: bold;
+                  margin-bottom: 20px;
+                "
+              >
+                About Us
+              </h5>
+              <p style="font-size: 14px; color: #ccc; line-height: 1.8">
+                Diya Hero is the Authorized Dealer of Hero Motocorp in Kollam
+                and Thiruvananthapuram Districts. Established in 2007 in Kollam
+                and expanded to Thiruvananthapuram in 2016, we offer
+                unparalleled service with skilled professionals handling over
+                100 vehicles daily.
+              </p>
+            </div>
 
+            <div class="col-md-4 mb-4">
+              <h5
+                style="
+                  color: #fff;
+                  font-size: 20px;
+                  font-weight: bold;
+                  margin-bottom: 20px;
+                "
+              >
+                Quick Links
+              </h5>
+              <ul
+                class="list-unstyled"
+                style="font-size: 14px; color: #ccc; line-height: 2"
+              >
+                <li>
+                  <a
+                    href="index.html"
+                    style="color: #f00; text-decoration: none"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    style="color: #f00; text-decoration: none"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    style="color: #f00; text-decoration: none"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="products.html"
+                    style="color: #f00; text-decoration: none"
+                    >Products</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="contact.html"
+                    style="color: #f00; text-decoration: none"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a href="blog.html" style="color: #f00; text-decoration: none"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
 
+            <div class="col-md-4 mb-4">
+              <h5
+                style="
+                  color: #fff;
+                  font-size: 20px;
+                  font-weight: bold;
+                  margin-bottom: 20px;
+                "
+              >
+                Contact Us
+              </h5>
+              <p style="font-size: 14px; color: #ccc; line-height: 1.8">
+                <strong>Trivandrum Branch:</strong><br />
+                Diya Square, Eanchakkal, Trivandrum-695008<br />
+                Phone: 0471-2509781/82/83/84/85
+              </p>
+              <p style="font-size: 14px; color: #ccc; line-height: 1.8">
+                <strong>Kollam Branch:</strong><br />
+                Diya Towers, Kadappakkada.PO, Kollam<br />
+                Phone: 0474-2731881, 82, 83
+              </p>
+            </div>
+          </div>
 
-		<!-- Main Footer -->
-		<footer class="main-footer mt-1"
-			style="background-color: #1d1b1b; color: #fff; padding: 60px 0; position: relative; overflow: hidden;">
-			<!-- Background pattern -->
-			<div
-				style="background: url('assets/images/footer-pattern.svg') no-repeat center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.1; z-index: 0;">
-			</div>
+          <!-- Footer Bottom: Social Media and Logo -->
+          <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <a href="index.html">
+                <img
+                  src="assets/images/logo re png.png"
+                  alt="Hero Logo"
+                  style="width: 180px"
+                />
+              </a>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <a
+                href="https://facebook.com/"
+                class="me-3"
+                style="color: #fff; font-size: 20px"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://twitter.com/"
+                class="me-3"
+                style="color: #fff; font-size: 20px"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://youtube.com/"
+                class="me-3"
+                style="color: #fff; font-size: 20px"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="https://instagram.com/"
+                style="color: #fff; font-size: 20px"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
 
-			<div class="container position-relative" style="z-index: 1;">
-				<!-- Footer Top: Description and Quick Links -->
-				<div class="row text-start mb-5">
-					<div class="col-md-4 mb-4">
-						<h5 style="color: #fff; font-size: 20px; font-weight: bold; margin-bottom: 20px;">About Us</h5>
-						<p style="font-size: 14px; color: #ccc; line-height: 1.8;">
-							Diya Hero is the Authorized Dealer of Hero Motocorp in Kollam and Thiruvananthapuram
-							Districts.
-							Established in 2007 in Kollam and expanded to Thiruvananthapuram in 2016, we offer
-							unparalleled service
-							with skilled professionals handling over 100 vehicles daily.
-						</p>
-					</div>
+          <!-- Footer Bottom Text -->
+          <div class="row text-center mt-4">
+            <div class="col-12">
+              <p style="font-size: 12px; color: #aaa">
+                &copy; 2025 Diya Group. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Main Footer -->
 
-					<div class="col-md-4 mb-4">
-						<h5 style="color: #fff; font-size: 20px; font-weight: bold; margin-bottom: 20px;">Quick Links
-						</h5>
-						<ul class="list-unstyled" style="font-size: 14px; color: #ccc; line-height: 2;">
-							<li><a href="index.html" style="color: #f00; text-decoration: none;">Home</a></li>
-							<li><a href="about.html" style="color: #f00; text-decoration: none;">About Us</a></li>
-							<li><a href="services.html" style="color: #f00; text-decoration: none;">Services</a></li>
-							<li><a href="products.html" style="color: #f00; text-decoration: none;">Products</a></li>
-							<li><a href="contact.html" style="color: #f00; text-decoration: none;">Contact</a></li>
-							<li><a href="blog.html" style="color: #f00; text-decoration: none;">Blog</a></li>
-						</ul>
-					</div>
+      <!-- Search Popup -->
+      <div class="search-popup">
+        <div class="color-layer"></div>
+        <button class="close-search">
+          <span class="flaticon-close-1"></span>
+        </button>
+        <form method="post" action="blog.html">
+          <div class="form-group">
+            <input
+              type="search"
+              name="search-field"
+              value=""
+              placeholder="Search Here"
+              required=""
+            />
+            <button
+              class="fa fa-solid fa-magnifying-glass fa-fw"
+              type="submit"
+            ></button>
+          </div>
+        </form>
+      </div>
+      <!-- End Search Popup -->
 
-					<div class="col-md-4 mb-4">
-						<h5 style="color: #fff; font-size: 20px; font-weight: bold; margin-bottom: 20px;">Contact Us
-						</h5>
-						<p style="font-size: 14px; color: #ccc; line-height: 1.8;">
-							<strong>Trivandrum Branch:</strong><br>
-							Diya Square, Eanchakkal, Trivandrum-695008<br>
-							Phone: 0471-2509781/82/83/84/85
-						</p>
-						<p style="font-size: 14px; color: #ccc; line-height: 1.8;">
-							<strong>Kollam Branch:</strong><br>
-							Diya Towers, Kadappakkada.PO, Kollam<br>
-							Phone: 0474-2731881, 82, 83
-						</p>
-					</div>
-				</div>
+      <!-- Sidebar Cart Item -->
+      <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+          <div class="sidebar-widget-container">
+            <div class="close-button">
+              <span class="fa-solid fa-xmark fa-fw"></span>
+            </div>
+            <div class="sidebar-textwidget">
+              <!-- Sidebar Info Content -->
+              <div class="sidebar-info-contents">
+                <div class="content-inner">
+                  <!-- Title Box -->
+                  <div class="title-box">
+                    <h5>Vroom <span>Bikers</span></h5>
+                    <div class="price">$15 from free economy shipping</div>
+                  </div>
 
-				<!-- Footer Bottom: Social Media and Logo -->
-				<div class="row align-items-center text-center text-md-start">
-					<div class="col-md-6 mb-3 mb-md-0">
-						<a href="index.html">
-							<img src="assets/images/logo re png.png" alt="Hero Logo" style="width: 180px;">
-						</a>
-					</div>
-					<div class="col-md-6 text-md-end">
-						<a href="https://facebook.com/" class="me-3" style="color: #fff; font-size: 20px;">
-							<i class="fa-brands fa-facebook-f"></i>
-						</a>
-						<a href="https://twitter.com/" class="me-3" style="color: #fff; font-size: 20px;">
-							<i class="fa-brands fa-twitter"></i>
-						</a>
-						<a href="https://youtube.com/" class="me-3" style="color: #fff; font-size: 20px;">
-							<i class="fa-brands fa-youtube"></i>
-						</a>
-						<a href="https://instagram.com/" style="color: #fff; font-size: 20px;">
-							<i class="fa-brands fa-instagram"></i>
-						</a>
-					</div>
-				</div>
+                  <!-- Empty Cart Box -->
+                  <div class="empty-cart-box">
+                    <!-- No Product -->
+                    <div class="no-cart">
+                      <span
+                        class="icon fa-solid fa-cart-flatbed-suitcase fa-fw"
+                      ></span>
+                      No products in cart.
+                    </div>
+                  </div>
 
-				<!-- Footer Bottom Text -->
-				<div class="row text-center mt-4">
-					<div class="col-12">
-						<p style="font-size: 12px; color: #aaa;">&copy; 2025 Hero Motors. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- End Main Footer -->
+                  <!-- Lower Box -->
+                  <div class="lower-box">
+                    <h5>Popular <span>Suggestions</span></h5>
 
+                    <!-- Post Block -->
+                    <div class="post-block">
+                      <div class="inner-box">
+                        <div class="image">
+                          <img
+                            src="assets/images/resource/post-thumb-1.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <h6><a href="#">Motorcycle Rallies</a></h6>
+                        <div class="rating">
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <div class="price-box">$125</div>
+                        <a class="theme-btn bag-btn" href="#">add to bag</a>
+                      </div>
+                    </div>
 
-		<!-- Search Popup -->
-		<div class="search-popup">
-			<div class="color-layer"></div>
-			<button class="close-search"><span class="flaticon-close-1"></span></button>
-			<form method="post" action="blog.html">
-				<div class="form-group">
-					<input type="search" name="search-field" value="" placeholder="Search Here" required="">
-					<button class="fa fa-solid fa-magnifying-glass fa-fw" type="submit"></button>
-				</div>
-			</form>
-		</div>
-		<!-- End Search Popup -->
+                    <!-- Post Block -->
+                    <div class="post-block">
+                      <div class="inner-box">
+                        <div class="image">
+                          <img
+                            src="assets/images/resource/post-thumb-2.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <h6><a href="#">Adventure Tours</a></h6>
+                        <div class="rating">
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <div class="price-box">$205</div>
+                        <a class="theme-btn bag-btn" href="#">add to bag</a>
+                      </div>
+                    </div>
 
-		<!-- Sidebar Cart Item -->
-		<div class="xs-sidebar-group info-group">
-			<div class="xs-overlay xs-bg-black"></div>
-			<div class="xs-sidebar-widget">
-				<div class="sidebar-widget-container">
-					<div class="close-button">
-						<span class="fa-solid fa-xmark fa-fw"></span>
-					</div>
-					<div class="sidebar-textwidget">
+                    <!-- Post Block -->
+                    <div class="post-block">
+                      <div class="inner-box">
+                        <div class="image">
+                          <img
+                            src="assets/images/resource/post-thumb-3.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <h6><a href="#">Group Rides</a></h6>
+                        <div class="rating">
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                        </div>
+                        <div class="price-box">$25</div>
+                        <a class="theme-btn bag-btn" href="#">add to bag</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-						<!-- Sidebar Info Content -->
-						<div class="sidebar-info-contents">
-							<div class="content-inner">
+      <!-- About Sidebar -->
+      <div class="about-sidebar">
+        <div class="gradient-layer"></div>
+        <!-- Close Button -->
+        <div class="close-sidebar-widget close-button">
+          <span class="fa-solid fa-xmark fa-fw"></span>
+        </div>
+        <div class="sidebar-inner">
+          <div class="upper-box">
+            <div class="image">
+              <img src="assets/images/resource/about.jpg" alt="" />
+            </div>
+            <div class="content-box">
+              <h3>About <span>vroom</span></h3>
+              <div class="text">
+                From scenic rides to thrilling encounters, our videos showcase
+                the beauty and camaraderie of motorcycling. Whether an
+                experienced rider or a curious newcomer, there's something for
+                everyone to enjoy in our content of moto vloggers.
+              </div>
+              <ul class="about-one_list">
+                <li>Motorcycle Rallies</li>
+                <li>Adventure Tours</li>
+                <li>Group Rides</li>
+                <li>Road Warrior</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Social Box -->
+          <div class="social-box">
+            <a href="https://facebook.com/"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com/"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://youtube.com/"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="https://instagram.com/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- End About Sidebar -->
+    </div>
+    <!-- End PageWrapper -->
 
-								<!-- Title Box -->
-								<div class="title-box">
-									<h5>Vroom <span>Bikers</span></h5>
-									<div class="price">$15 from free economy shipping</div>
-								</div>
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <div class="whatsapp-icon">
+      <a
+        href="https://wa.me/9745015888?text=Hello!%20I%20would%20like%20to%20know%20more%20about..."
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+        />
+      </a>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/tilt.jquery.min.js"></script>
+    <script src="assets/js/jquery.paroller.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/backtotop.js"></script>
+    <script src="assets/js/odometer.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
 
-								<!-- Empty Cart Box -->
-								<div class="empty-cart-box">
-									<!-- No Product -->
-									<div class="no-cart">
-										<span class="icon fa-solid fa-cart-flatbed-suitcase fa-fw"></span>
-										No products in cart.
-									</div>
-								</div>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
 
-								<!-- Lower Box -->
-								<div class="lower-box">
-									<h5>Popular <span>Suggestions</span></h5>
-
-									<!-- Post Block -->
-									<div class="post-block">
-										<div class="inner-box">
-											<div class="image">
-												<img src="assets/images/resource/post-thumb-1.jpg" alt="" />
-											</div>
-											<h6><a href="#">Motorcycle Rallies</a></h6>
-											<div class="rating">
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-											</div>
-											<div class="price-box">$125</div>
-											<a class="theme-btn bag-btn" href="#">add to bag</a>
-										</div>
-									</div>
-
-									<!-- Post Block -->
-									<div class="post-block">
-										<div class="inner-box">
-											<div class="image">
-												<img src="assets/images/resource/post-thumb-2.jpg" alt="" />
-											</div>
-											<h6><a href="#">Adventure Tours</a></h6>
-											<div class="rating">
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-											</div>
-											<div class="price-box">$205</div>
-											<a class="theme-btn bag-btn" href="#">add to bag</a>
-										</div>
-									</div>
-
-									<!-- Post Block -->
-									<div class="post-block">
-										<div class="inner-box">
-											<div class="image">
-												<img src="assets/images/resource/post-thumb-3.jpg" alt="" />
-											</div>
-											<h6><a href="#">Group Rides</a></h6>
-											<div class="rating">
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-												<span class="fa fa-star"></span>
-											</div>
-											<div class="price-box">$25</div>
-											<a class="theme-btn bag-btn" href="#">add to bag</a>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- About Sidebar -->
-		<div class="about-sidebar">
-			<div class="gradient-layer"></div>
-			<!-- Close Button -->
-			<div class="close-sidebar-widget close-button">
-				<span class="fa-solid fa-xmark fa-fw"></span>
-			</div>
-			<div class="sidebar-inner">
-				<div class="upper-box">
-					<div class="image">
-						<img src="assets/images/resource/about.jpg" alt="" />
-					</div>
-					<div class="content-box">
-						<h3>About <span>vroom</span></h3>
-						<div class="text">From scenic rides to thrilling encounters, our videos showcase the beauty and
-							camaraderie of motorcycling. Whether an experienced rider or a curious newcomer, there's
-							something for everyone to enjoy in our content of moto vloggers.</div>
-						<ul class="about-one_list">
-							<li>Motorcycle Rallies</li>
-							<li>Adventure Tours</li>
-							<li>Group Rides</li>
-							<li>Road Warrior</li>
-						</ul>
-					</div>
-				</div>
-				<!-- Social Box -->
-				<div class="social-box">
-					<a href="https://facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-					<a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
-					<a href="https://youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-					<a href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-				</div>
-			</div>
-		</div>
-		<!-- End About Sidebar -->
-
-	</div>
-	<!-- End PageWrapper -->
-
-	<div class="progress-wrap">
-		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-		</svg>
-	</div>
-	<div class="whatsapp-icon">
-		<a href="https://wa.me/9745015888?text=Hello!%20I%20would%20like%20to%20know%20more%20about..." target="_blank">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-		</a>
-	</div>
-	<script src="assets/js/jquery.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/appear.js"></script>
-	<script src="assets/js/parallax.min.js"></script>
-	<script src="assets/js/tilt.jquery.min.js"></script>
-	<script src="assets/js/jquery.paroller.min.js"></script>
-	<script src="assets/js/wow.js"></script>
-	<script src="assets/js/swiper.min.js"></script>
-	<script src="assets/js/backtotop.js"></script>
-	<script src="assets/js/odometer.js"></script>
-	<script src="assets/js/parallax-scroll.js"></script>
-
-	<script src="assets/js/gsap.min.js"></script>
-	<script src="assets/js/SplitText.min.js"></script>
-	<script src="assets/js/ScrollTrigger.min.js"></script>
-	<script src="assets/js/ScrollToPlugin.min.js"></script>
-	<script src="assets/js/ScrollSmoother.min.js"></script>
-
-	<script src="assets/js/magnific-popup.min.js"></script>
-	<script src="assets/js/jquery.meanmenu.min.js"></script>
-	<script src="assets/js/nav-tool.js"></script>
-	<script src="assets/js/jquery-ui.js"></script>
-	<script src="assets/js/jquery.countdown.js"></script>
-	<script src="assets/js/element-in-view.js"></script>
-	<script src="assets/js/script.js"></script>
-
-</body>
-
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/nav-tool.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/jquery.countdown.js"></script>
+    <script src="assets/js/element-in-view.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
